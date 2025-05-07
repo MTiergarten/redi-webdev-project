@@ -24,7 +24,7 @@
 - Avoid stress and frustration when hungry.
 - Feel in control and cared for by your past self.
 
-## Development Plan
+# Development Plan
 ## Phase 1 (working output with limited flexibility)
 - User selects intolerances, allergies or preferences (e.g. don't recommend peanuts / gluten)
 - App fetches and displays recipes from a small local database based on user preferences *(no API yet)*

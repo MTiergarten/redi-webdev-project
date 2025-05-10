@@ -26,8 +26,9 @@
 
 # Development Plan
 ## Phase 1 (working output with limited flexibility)
+- ~~- Create hardcoded recipe database for testing (while no API)~~
 - User selects intolerances, allergies or preferences (e.g. don't recommend peanuts / gluten)
-- App fetches and displays recipes from a small local database based on user preferences *(no API yet)*
+- App fetches and displays recipes from local database based on user preferences
 - User selects their preferred recipes or randomizes from a list
 - App generates a 1-week meal plan (e.g. 3 meals for lunch, 3 for dinner + quick breakfast and snacks, reused across the week)
 

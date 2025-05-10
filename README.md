@@ -48,5 +48,5 @@
 - Allow user to customize portion size (maybe according to calories / macro goals)
 - Import recipes from links (eg recipe blogs)
 - Rating: suggest more/less/nothing of a recipe
-- Allow users to save recipes in a collection
+  - Allow users to save recipes in a collection (consider Window:local storage https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage ?)
 - Automate rotation plan based on liked and saved recipes, instead of inputting preferences every time. User can then customize plan

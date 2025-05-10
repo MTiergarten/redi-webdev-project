@@ -24,17 +24,17 @@
 - Avoid stress and frustration when hungry.
 - Feel in control and cared for by your past self.
 
-# Development Plan
-## Phase 1 (working output with limited flexibility)
-- ~~- Create hardcoded recipe database for testing (while no API)~~
+# Development Plan **(due 26/05)**
+## **Phase 1 (due 13/05)** (working output with limited flexibility)
 - User selects intolerances, allergies or preferences (e.g. don't recommend peanuts / gluten)
-  - to do: form to select intolerances
+  - [ ] To do: form to select intolerances
 - App fetches and displays recipes from local database based on user preferences
-  - to do: filter arrays by ingredients, return recipes matching the preferences
+  - [x] ~~To do: Create hardcoded recipe database for testing (while no API)~~
+  - [ ] To do: filter arrays by ingredients, return recipes matching the preferences
 - User selects their preferred recipes or randomizes from a list
-  - to do: DOM manipulation: allow user to select recipes or randomize
+  - [ ] To do: DOM manipulation: allow user to select recipes or randomize
 - App generates a 1-week meal plan (e.g. 3 meals for lunch, 3 for dinner + quick breakfast and snacks, reused across the week)
-  - return plan with selected meals or randomized recipes to yield enough meals for a week
+  - [ ] To do: return plan with selected meals or randomized recipes to yield enough meals for a week
 
 ## Phase 2 (more personalization)
 - User selects main ingredient for breakfast (e.g. eggs, yoghurt, fruit, cheese)

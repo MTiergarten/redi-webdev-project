@@ -10,6 +10,10 @@
     - 1 tsp cocoa powder
     - 1 tbsp milk (add to taste to desired consistency)
 
+- Eggs on toast with cheese
+    - 50g bread (1 semmel or 2 slices of toast)
+    - 2 eggs (scrambled or omelet)
+    - 20g cheese of choicec
 
 - Yoghurt with fruits
   - 200g greek yoghurt

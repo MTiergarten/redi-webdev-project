@@ -114,12 +114,11 @@ grilledCheese.category = ['nuts', 'seafood', 'vegetarian'];
 
 const userPreferences = document.getElementById('userPreferences');
 const checkRestrictions = userPreferences.querySelectorAll('input[type="checkbox"]');
-//used chatGPT to better understand the difference between elements that can / can't be iterable in a DOM manipulation - and how to target the chcekboxes in the form
+//used chatGPT to understand the difference between elements that can / can't be iterable in a DOM manipulation - and how to create a variable to target all the checkboxes in my form to run in a loop
 
 userPreferences.addEventListener('submit', function(event) {
-    event.preventDefault(); // prevent the form from reloading the page
+    event.preventDefault();
 
-    // fetch items that are checked:
     const restrictions = []
     for (let item of checkRestrictions) {
         if (item.checked) {
@@ -127,10 +126,10 @@ userPreferences.addEventListener('submit', function(event) {
         }
     }
 
-    // use array to filter recipes
     let filteredRecipes = recipe.allRecipes.filter(recipe => restrictions.every(restriction => recipe.category.includes(restriction))
-    );
+    ); //used chatGPT to understand how I could use each item in the array as a condition for my filter - it suggested using the 'every' method
 
+    console.log(restrictions);
     console.log(filteredRecipes.length);
     console.log(filteredRecipes);
 

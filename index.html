@@ -8,6 +8,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<script src="script.js"></script>
+    <h1>Meal Rotation Planner</h1>
+
+    <h3>Do you have any dietary restrictions?</h3>
+
+    <form id = "userPreferences">
+
+        <p>Select all that apply:</p>
+
+        <input type = "checkbox" id = "dairy" name = "dairy">
+        <label for = "dairy">Dairy Free</label><br>
+
+        <input type = "checkbox" id = "gluten" name = "gluten">
+        <label for = "gluten">Gluten Free</label><br>
+
+        <input type = "checkbox" id = "nuts" name = "nuts">
+        <label for = "nuts">Nut Allergy</label><br>
+
+        <input type = "checkbox" id = "seafood" name = "seafood">
+        <label for = "seafood">Seafood Allergy</label><br>
+
+        <input type = "checkbox" id = "vegetarian" name = "vegetarian">
+        <label for = "vegetarian">Vegetarian</label><br>
+
+        <input type = "checkbox" id = "vegan" name = "vegan">
+        <label for = "vegan">Vegan</label><br>
+
+        <input type = "submit" value="Submit">
+    </form>
+    <script src="script.js"></script>
 </body>
 </html>

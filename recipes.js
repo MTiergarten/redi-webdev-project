@@ -98,7 +98,7 @@ const grilledCheese = new recipe(
     1);
 
 //userPreferences = recipe.allRecipes.filter(recipe => !recipe.ingredients.includes('toast'))
-console.log(userPreferences)
+//console.log(userPreferences)
 //"includes" checks the entire array element - so it will only remove the recipes containing toast if the array element is "toast" and not "2 slices of toast" as in the grilled cheese - solutions": create a new parameter "preferences/allergens" or separate parameter ingredients ("ingredient"/ "amount") - this would probably depend on how the data is organized on the API I'll be using
 
 // static removeRecipe(name) {

@@ -1,9 +1,14 @@
 class recipe {
+
+    static allRecipes = [];
+    //used ChatGPT to understand how I could create a command or function inside my class "recipe" to updates my array of recipes when I create a new instance, instead of having to do this manually, so it suggested using the static property
+
     constructor(type, name, ingredients, portions) {
         this.type = type;
         this.name = name;
         this.ingredients = ingredients;
         this.portions = portions;
+        recipe.allRecipes.push(this);
     }
 
     printRecipe(type, name, ingredients, portions) {
@@ -11,6 +16,10 @@ class recipe {
         console.log(this.name);
         console.log("Ingredients: " + this.ingredients.toString());
         console.log("Portions: " + this.portions);
+    }
+
+    static listRecipes() {
+        return recipe.allRecipes;
     }
 
     //to do: function to filter preferences
@@ -87,3 +96,12 @@ const grilledCheese = new recipe(
     ['Snack'],
     ['2 slices of toast', '25g soft cheese of choice', '1 tsp butter'],
     1);
+
+userPreferences = recipe.allRecipes.filter(recipe => !recipe.ingredients.includes('toast'))
+console.log(userPreferences)
+//"includes" checks the entire array element - so it will only remove the recipes containing toast if the array element is "toast" and not "2 slices of toast" as in the grilled cheese - solutions": create a new parameter "preferences/allergens" or separate parameter ingredients ("ingredient"/ "amount") - this would probably depend on how the data is organized on the API I'll be using
+
+// static removeRecipe(name) {
+//     Recipe.allRecipes = Recipe.allRecipes.filter(recipe => recipe.name !== name);
+//     console.log(`Removed ${name} from the recipe list`);
+// }

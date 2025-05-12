@@ -7,7 +7,7 @@
 - App fetches recipes from local database based on user preferences
   - [x] ~~To do: Create hardcoded recipe database for testing (while no API)~~
   - [x] ~~To do: DOM manipulation - extract user preferences from the form~~
-  - [ ] To do: filter recipes by ingredients
+  - [ ] In Progress: filter recipes by ingredients
 - App generates a 1-week meal plan (e.g. 3 meals for lunch, 3 for dinner + quick breakfast and snacks, reused across the week)
   - [ ] To do: return plan with selected meals or randomized recipes to yield enough meals for a week
 

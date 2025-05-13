@@ -67,6 +67,14 @@ const pork = new recipe(
     3);
 pork.category = ['gluten', 'seafood', 'nuts'];
 
+const wrap = new recipe(
+    'Chicken Wrap',
+    ['lunch', 'dinner'],
+    ['400g chicken breast', '400g tomato basil sauce', '1/2 finely diced onion', '1 grated garlic clove', 'Season to taste: salt, black pepper', '60g light mayo', '3 tortillas'],
+    3,
+    ['dairy', 'nuts', 'seafood']
+)
+
 const salad1 = new recipe(
     'Green Salad',
     ['veggies'],
@@ -133,19 +141,18 @@ userPreferences.addEventListener('submit', function(event) {
     let filteredRecipes = recipe.allRecipes.filter(recipe => restrictions.every(restriction => recipe.category.includes(restriction)));
     //used chatGPT to understand how I could use each item in the array as a condition for my filter - it suggested using the 'every' method
 
-    function randomize() {
-        for (let i = filteredRecipes.length -1; i > 0; i--) {
+    function randomize(arr) {
+        for (let i = arr.length -1; i > 0; i--) {
             let j = Math.floor(Math.random() * (i+1));
-            let k = filteredRecipes[i];
-            filteredRecipes[i] = filteredRecipes[j];
-            filteredRecipes[j] = k;
+            let k = arr[i];
+            arr[i] = arr[j];
+            arr[j] = k;
         }
     }
 
-    randomize();
+    randomize(filteredRecipes);
 
     console.log(restrictions);
-    console.log(filteredRecipes.length);
     console.log(filteredRecipes);
 
     recipesFound.innerHTML = `<h2>Recipes Found:</h2>`;
@@ -160,27 +167,92 @@ userPreferences.addEventListener('submit', function(event) {
 
     breakfast.innerHTML = `<h3>Breakfast Options:</h3>`;
     let breakfastPlan = filteredRecipes.filter(recipe => recipe.type.includes('breakfast'));
-    const breakfastRecipes = document.createElement('li');
-    breakfastRecipes.textContent = breakfastPlan[0].name;
-    document.getElementById('breakfast').appendChild(breakfastRecipes);
+    console.log(breakfastPlan);
+    let a = 0
+    while (a <= 1) {
+        if (breakfastPlan.length >=2) {
+            const breakfastRecipes = document.createElement('li');
+            breakfastRecipes.textContent = breakfastPlan[a].name;
+            document.getElementById('breakfast').appendChild(breakfastRecipes);
+            a++
+        } else if (breakfastPlan.length == 1) {
+            const breakfastRecipes = document.createElement('li');
+            breakfastRecipes.textContent = breakfastPlan[a].name;
+            document.getElementById('breakfast').appendChild(breakfastRecipes);
+            break
+        } else {
+            const breakfastRecipes = document.createElement('li');
+            breakfastRecipes.textContent = 'Couldn\'t find recipes';
+            document.getElementById('breakfast').appendChild(breakfastRecipes);
+            break
+        }
+    }
 
     lunch.innerHTML = `<h3>Lunch Options:</h3>`;
     let lunchPlan = filteredRecipes.filter(recipe => recipe.type.includes('lunch'));
     let veggies = filteredRecipes.filter(recipe => recipe.type.includes('veggies'));
-    const lunchRecipes = document.createElement('li');
-    lunchRecipes.textContent = lunchPlan[0].name + ` and ` + veggies[0].name;
-    document.getElementById('lunch').appendChild(lunchRecipes);
+    let b = 0
+    while (b <= 1) {
+        if (lunchPlan.length >= 2) {
+            const lunchRecipes = document.createElement('li');
+            lunchRecipes.textContent = lunchPlan[b].name + ` and ` + veggies[b].name;
+            document.getElementById('lunch').appendChild(lunchRecipes);
+            b++
+        } else if (lunchPlan.length == 1) {
+            const lunchRecipes = document.createElement('li');
+            lunchRecipes.textContent = lunchPlan[b].name + ` and ` + veggies[b].name;
+            document.getElementById('lunch').appendChild(lunchRecipes);
+            break
+        } else {
+            const lunchRecipes = document.createElement('li');
+            lunchRecipes.textContent = 'Couldn\'t find recipes';
+            document.getElementById('lunch').appendChild(lunchRecipes);
+            break
+        }
+    }
 
     snack.innerHTML = `<h3>Snack Options:</h3>`;
     let snackPlan = filteredRecipes.filter(recipe => recipe.type.includes('snack'));
-    const snackRecipes = document.createElement('li');
-    snackRecipes.textContent = snackPlan[0].name;
-    document.getElementById('snack').appendChild(snackRecipes);
+    let c = 0
+    while (c <= 1) {
+        if (snackPlan.length >= 2) {
+            const snackRecipes = document.createElement('li');
+            snackRecipes.textContent = snackPlan[c].name;
+            document.getElementById('snack').appendChild(snackRecipes);
+            c++
+        } else if (snackPlan.length == 1) {
+            const snackRecipes = document.createElement('li');
+            snackRecipes.textContent = snackPlan[c].name;
+            document.getElementById('snack').appendChild(snackRecipes);
+            break
+        } else {
+            const snackRecipes = document.createElement('li');
+            snackRecipes.textContent = 'Couldn\'t find recipes';
+            document.getElementById('snack').appendChild(snackRecipes);
+            break
+        }
+    }
 
     dinner.innerHTML = `<h3>Dinner Options:</h3>`;
     let dinnerPlan = filteredRecipes.filter(recipe => recipe.type.includes('dinner'));
-    const dinnerRecipes = document.createElement('li');
-    dinnerRecipes.textContent = dinnerPlan[1].name + ` and ` + veggies[1].name;
-    document.getElementById('dinner').appendChild(dinnerRecipes);
-
+    randomize(dinnerPlan)
+    let d = 0
+    while (d <= 1) {
+        if (dinnerPlan.length >= 2) {
+            const dinnerRecipes = document.createElement('li');
+            dinnerRecipes.textContent = dinnerPlan[d].name + ` and ` + veggies[d].name;
+            document.getElementById('dinner').appendChild(dinnerRecipes);
+            d++
+        } else if (dinnerPlan.length == 1) {
+            const dinnerRecipes = document.createElement('li');
+            dinnerRecipes.textContent = dinnerPlan[d].name + ` and ` + veggies[d].name;
+            document.getElementById('dinner').appendChild(dinnerRecipes);
+            break
+        } else {
+            const dinnerRecipes = document.createElement('li');
+            dinnerRecipes.textContent = 'Couldn\'t find recipes';
+            document.getElementById('dinner').appendChild(dinnerRecipes);
+            break
+        }
+    }
 });

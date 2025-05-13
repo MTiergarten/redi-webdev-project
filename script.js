@@ -25,99 +25,86 @@ class recipe {
     }
 }
 
-//meal plan:
-
-// class plan extends recipe {
-//     constructor() {}
-// }
-
-// this should return recipes for all the meals in a week:
-// randomly select recipes until it meets the portion goal
-// - 7 portions breakfast
-// - 7 portions snack
-// - 14 portions lunch/dinner + 14 portions veggies
-// lunch/dinner: needs its own constructor? main recipe + veggies
-
 const eggs = new recipe(
     'Eggs On Toast With Cheese',
-    ['Breakfast'],
+    ['breakfast'],
     ['50g bread (1 bun or 2 slices of toast)', '2 eggs (scrambled or omelet)', '20g cheese of choice'],
     1);
 eggs.category = ['nuts', 'seafood', 'vegetarian']
 
 const couscous = new recipe(
     'Corn Couscous With Cheese',
-    ['Breakfast'],
+    ['breakfast'],
     ['40g corn couscous', '1 tsp butter', '60ml water', 'Salt to taste', '20g cheese of choice'],
     1);
 couscous.category = ['gluten', 'nuts', 'seafood', 'vegetarian'];
 
 const oatmeal = new recipe(
     'High Protein Oatmeal',
-    ['Breakfast'],
+    ['breakfast'],
     ['1 banana', '120ml milk of choice', '1 tbsp peanut butter', '20g protein powder of choice', '25g oats'],
     1);
 oatmeal.category = ['dairy', 'gluten', 'seafood', 'vegetarian', 'vegan'];
 
 const bolognese = new recipe(
     'Simplified Bolognese Pasta',
-    ['Lunch', 'Dinner'],
+    ['lunch', 'dinner'],
     ['250g whole wheat fusilli pasta', '400g minced meat', '200g tomato sauce', '1 tbsp tomato sauce', '1/2 finely diced onion', '1 grated clove of garlic', 'Season to taste: salt, black pepper, cayenne pepper, smoked paprika'],
     3);
 bolognese.category = ['dairy', 'gluten', 'seafood', 'nuts'];
 
 const chicken = new recipe(
     'Grilled Chicken with Herb Potatoes',
-    ['Lunch', 'Dinner'],
+    ['lunch', 'dinner'],
     ['400g chicken breast (butterflied)', '1 lime', '1 grated clove or garlic', '2 tbsp olive oil', 'Season to taste: salt and black pepper', '700g potatoes, cut into 1 inch cubes: season to taste with wild garlic, pesto or parsley after boiling'],
     3);
 chicken.category = ['dairy', 'gluten', 'seafood', 'nuts'];
 
 const pork = new recipe(
     'Roasted Pork Tenderloin with Mashed Potatoes',
-    ['Lunch', 'Dinner'],
+    ['lunch', 'dinner'],
     ['700g potatoes (peeled and quartered)', '30g butter', '100ml milk of choice', 'Season to taste: salt, nutmeg, garlic powder and black pepper', '400g pork tenderloin', '2 tbsp olive oil', '2 cloves garlic', '1 tsp paprika', 'Season to taste: salt and black pepper'],
     3);
 pork.category = ['gluten', 'seafood', 'nuts'];
 
 const salad1 = new recipe(
     'Green Salad',
-    ['Lunch', 'Dinner'],
+    ['veggies'],
     ['Mixed fresh green leaves', 'Olive oil and balsamic dressing'],
     1);
 salad1.category = ['dairy', 'gluten', 'nuts', 'seafood', 'vegetarian', 'vegan'];
 
 const salad2 = new recipe(
     'Mixed Salad',
-    ['Lunch', 'Dinner'],
+    ['veggies'],
     ['Diced tomatoes', 'Sliced cucumber', 'Sliced red onion', 'Sliced bell peppers', 'Lettuce or arugula', 'Olive oil and apple cider vinegar dressing'],
     1);
 salad2.category = ['dairy', 'gluten', 'nuts', 'seafood', 'vegetarian', 'vegan'];
 
 const veggies = new recipe(
     'Steamed Veggie Mix',
-    ['Lunch', 'Dinner'],
+    ['veggies'],
     ['Mixed veggies fresh or frozen', 'Season to taste: salt, black pepper, paprika'],
     1);
 veggies.category = ['dairy', 'gluten', 'nuts', 'seafood', 'vegetarian', 'vegan'];
 
 const tuna = new recipe(
     'Tuna Sandwich',
-    ['Snack'],
+    ['snack'],
     ['1 can of tuna (in brine)', '2 tbsp light teriyaki sauce', '2 tbsp light mayo', '4 slices of toast', 'Optional: lettuce, sliced red onion'],
     2);
 tuna.category = ['dairy', 'nuts'];
 
 const yoghurt = new recipe(
     'Yoghurt Bowl with Fruits',
-    ['Snack'],
+    ['snack'],
     ['150g greek yoghurt', '15g protein of choice', '150g fruit of choice', 'Optional: 1 tbsp honey'],
     1);
 yoghurt.category = ['gluten', 'nuts', 'seafood', 'vegetarian'];
 
 const grilledCheese = new recipe(
     'Grilled Cheese',
-    ['Snack'],
+    ['snack'],
     ['2 slices of toast', '25g soft cheese of choice', '1 tsp butter'],
     1);
 grilledCheese.category = ['nuts', 'seafood', 'vegetarian'];
@@ -125,7 +112,12 @@ grilledCheese.category = ['nuts', 'seafood', 'vegetarian'];
 
 const userPreferences = document.getElementById('userPreferences');
 const checkRestrictions = userPreferences.querySelectorAll('input[type="checkbox"]');
+const recipesFound = document.getElementById('recipesFound');
 const mealPlan = document.getElementById('mealPlan');
+const breakfast = document.getElementById('breakfast');
+const lunch = document.getElementById('lunch');
+const snack = document.getElementById('snack');
+const dinner = document.getElementById('dinner');
 //used chatGPT to understand the difference between elements that can / can't be iterable in a DOM manipulation - and how to create a variable to target all the checkboxes in my form to run in a loop
 
 userPreferences.addEventListener('submit', function(event) {
@@ -146,14 +138,39 @@ userPreferences.addEventListener('submit', function(event) {
     console.log(filteredRecipes);
 
     // return all the recipes found
-    mealPlan.innerHTML = `<h2>Recipes Found:</h2>`;
+    recipesFound.innerHTML = `<h2>Recipes Found:</h2>`;
 
     for (let item of filteredRecipes) {
         const planRecipes = document.createElement('li');
         planRecipes.textContent = item.name;
-        document.getElementById('mealPlan').appendChild(planRecipes);
+        document.getElementById('recipesFound').appendChild(planRecipes);
     }
 
-// need to create a message for when there are no matching recipes (eg no vegan options for lunch)
+    mealPlan.innerHTML = `<h2>Meal Plan for the Week:</h2>`;
+
+    breakfast.innerHTML = `<h3>Breakfast Options:</h3>`;
+    let breakfastPlan = filteredRecipes.filter(recipe => recipe.type.includes('breakfast'));
+    const breakfastRecipes = document.createElement('li');
+    breakfastRecipes.textContent = breakfastPlan[0].name;
+    document.getElementById('breakfast').appendChild(breakfastRecipes);
+
+    lunch.innerHTML = `<h3>Lunch Options:</h3>`;
+    let lunchPlan = filteredRecipes.filter(recipe => recipe.type.includes('lunch'));
+    let veggies = filteredRecipes.filter(recipe => recipe.type.includes('veggies'));
+    const lunchRecipes = document.createElement('li');
+    lunchRecipes.textContent = lunchPlan[0].name + ` and ` + veggies[0].name;
+    document.getElementById('lunch').appendChild(lunchRecipes);
+
+    snack.innerHTML = `<h3>Snack Options:</h3>`;
+    let snackPlan = filteredRecipes.filter(recipe => recipe.type.includes('snack'));
+    const snackRecipes = document.createElement('li');
+    snackRecipes.textContent = snackPlan[0].name;
+    document.getElementById('snack').appendChild(snackRecipes);
+
+    dinner.innerHTML = `<h3>Dinner Options:</h3>`;
+    let dinnerPlan = filteredRecipes.filter(recipe => recipe.type.includes('dinner'));
+    const dinnerRecipes = document.createElement('li');
+    dinnerRecipes.textContent = dinnerPlan[1].name + ` and ` + veggies[1].name;
+    document.getElementById('dinner').appendChild(dinnerRecipes);
 
 });

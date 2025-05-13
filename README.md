@@ -8,11 +8,12 @@
   - [x] ~~To do: Create hardcoded recipe database for testing (while no API)~~
   - [x] ~~To do: DOM manipulation - extract user preferences from the form~~
   - [x] ~~To do: filter recipes by ingredients~~
-- App generates a 1-week meal plan (e.g. 3 meals for lunch, 3 for dinner + quick breakfast and snacks, reused across the week)
+- App generates a 1-week meal plan (e.g. 2 options for each meal (breakfast, lunch, snack and dinner), reused across the week)
   - [ ] To do: return plan with randomized recipes to yield enough meals for a week
 
 ## Phase 2 (more personalization)
 - Basic responsive design
+- Create an output and a message for when there are no matching recipes (eg no vegan options for lunch)
 - User selects main ingredient for breakfast (e.g. eggs, yoghurt, fruit, cheese)
 - User selects preferred types of snack (e.g. savory, sweet, hot, cold)
 - User selects types of carb and protein for lunch and dinner (e.g. potatoes, rice, chicken, tofu)

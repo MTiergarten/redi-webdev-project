@@ -23,9 +23,20 @@ class recipe {
     static listRecipes() {
         return recipe.allRecipes;
     }
-
-    //to do: function to filter preferences
 }
+
+//meal plan:
+
+// class plan extends recipe {
+//     constructor() {}
+// }
+
+// this should return recipes for all the meals in a week:
+// randomly select recipes until it meets the portion goal
+// - 7 portions breakfast
+// - 7 portions snack
+// - 14 portions lunch/dinner + 14 portions veggies
+// lunch/dinner: needs its own constructor? main recipe + veggies
 
 const eggs = new recipe(
     'Eggs On Toast With Cheese',
@@ -142,5 +153,7 @@ userPreferences.addEventListener('submit', function(event) {
         planRecipes.textContent = item.name;
         document.getElementById('mealPlan').appendChild(planRecipes);
     }
+
+// need to create a message for when there are no matching recipes (eg no vegan options for lunch)
 
 });

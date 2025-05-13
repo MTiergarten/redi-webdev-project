@@ -1,7 +1,7 @@
 # Idea: Meal Rotation Planning App
 
 # Development Plan **(due 26/05)**
-## **Phase 1 (due 13/05)** (working output with limited flexibility)
+## ✅ **Phase 1 (due 13/05)** (working output with limited flexibility)
 - User selects intolerances, allergies or preferences (e.g. don't recommend peanuts / gluten)
   - [x] ~~To do: form to select intolerances~~
 - App fetches recipes from local database based on user preferences
@@ -11,7 +11,7 @@
 - App generates a 1-week meal plan (e.g. 2 options for each meal (breakfast, lunch, snack and dinner), reused across the week)
   - [x] ~~To do: return plan with randomized recipes to yield enough meals for a week~~
 
-## Phase 2 (design + more detailed output)
+## Phase 2 (due 19/05) (design + more detailed output)
 - Basic responsive design
 - Display detailed recipes
 

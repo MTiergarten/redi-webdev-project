@@ -114,6 +114,7 @@ grilledCheese.category = ['nuts', 'seafood', 'vegetarian'];
 
 const userPreferences = document.getElementById('userPreferences');
 const checkRestrictions = userPreferences.querySelectorAll('input[type="checkbox"]');
+const mealPlan = document.getElementById('mealPlan');
 //used chatGPT to understand the difference between elements that can / can't be iterable in a DOM manipulation - and how to create a variable to target all the checkboxes in my form to run in a loop
 
 userPreferences.addEventListener('submit', function(event) {
@@ -126,11 +127,20 @@ userPreferences.addEventListener('submit', function(event) {
         }
     }
 
-    let filteredRecipes = recipe.allRecipes.filter(recipe => restrictions.every(restriction => recipe.category.includes(restriction))
-    ); //used chatGPT to understand how I could use each item in the array as a condition for my filter - it suggested using the 'every' method
+    let filteredRecipes = recipe.allRecipes.filter(recipe => restrictions.every(restriction => recipe.category.includes(restriction)));
+    //used chatGPT to understand how I could use each item in the array as a condition for my filter - it suggested using the 'every' method
 
     console.log(restrictions);
     console.log(filteredRecipes.length);
     console.log(filteredRecipes);
+
+    // return all the recipes found
+    mealPlan.innerHTML = `<h2>Recipes Found:</h2>`;
+
+    for (let item of filteredRecipes) {
+        const planRecipes = document.createElement('li');
+        planRecipes.textContent = item.name;
+        document.getElementById('mealPlan').appendChild(planRecipes);
+    }
 
 });

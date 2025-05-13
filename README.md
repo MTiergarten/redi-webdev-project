@@ -9,15 +9,17 @@
   - [x] ~~To do: DOM manipulation - extract user preferences from the form~~
   - [x] ~~To do: filter recipes by ingredients~~
 - App generates a 1-week meal plan (e.g. 3 meals for lunch, 3 for dinner + quick breakfast and snacks, reused across the week)
-  - [ ] To do: return plan with selected meals or randomized recipes to yield enough meals for a week
+  - [ ] To do: return plan with randomized recipes to yield enough meals for a week
 
 ## Phase 2 (more personalization)
+- Basic responsive design
 - User selects main ingredient for breakfast (e.g. eggs, yoghurt, fruit, cheese)
 - User selects preferred types of snack (e.g. savory, sweet, hot, cold)
 - User selects types of carb and protein for lunch and dinner (e.g. potatoes, rice, chicken, tofu)
 - User defines a meal plan structure (e.g. meals/day, number of days, recipe yield)
 
 ## Phase 3 (includes API + more polished output)
+- Polish design
 - App integrates with external recipe API
 - App generates a grocery shopping list
 
@@ -28,8 +30,9 @@
 - Allow user to customize portion size (maybe according to calories / macro goals)
 - Import recipes from links (eg recipe blogs)
 - Rating: suggest more/less/nothing of a recipe
-  - Allow users to save recipes in a collection (consider Window:local storage https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage ?)
-- Automate rotation plan based on liked and saved recipes, instead of inputting preferences every time. User can then customize plan
+- Allow users to save recipes in a collection (consider Window:local storage https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage ?)
+- Automate rotation plan based on liked and saved recipes, instead of inputting preferences every time
+- Allow user to customize plan selecting recipes (similar to https://coolors.co/)
 
 
 ## Product Concept: Jobs to be Done

@@ -9,11 +9,10 @@
   - [x] ~~To do: DOM manipulation - extract user preferences from the form~~
   - [x] ~~To do: filter recipes by ingredients~~
 - App generates a 1-week meal plan (e.g. 2 options for each meal (breakfast, lunch, snack and dinner), reused across the week)
-  - [x] To do: return plan with randomized recipes to yield enough meals for a week
+  - [x] ~~To do: return plan with randomized recipes to yield enough meals for a week~~
 
 ## Phase 2 (design + more detailed output)
 - Basic responsive design
-- Create output and message for when there are no matching recipes (eg no vegan options for lunch)
 - Display detailed recipes
 
 ## Phase 3 (includes API + more personalization)

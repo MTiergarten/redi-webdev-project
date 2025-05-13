@@ -11,17 +11,18 @@
 - App generates a 1-week meal plan (e.g. 2 options for each meal (breakfast, lunch, snack and dinner), reused across the week)
   - [ ] To do: return plan with randomized recipes to yield enough meals for a week
 
-## Phase 2 (more personalization)
+## Phase 2 (design + more detailed output)
 - Basic responsive design
-- Create an output and a message for when there are no matching recipes (eg no vegan options for lunch)
-- User selects main ingredient for breakfast (e.g. eggs, yoghurt, fruit, cheese)
-- User selects preferred types of snack (e.g. savory, sweet, hot, cold)
-- User selects types of carb and protein for lunch and dinner (e.g. potatoes, rice, chicken, tofu)
-- User defines a meal plan structure (e.g. meals/day, number of days, recipe yield)
+- Create output and message for when there are no matching recipes (eg no vegan options for lunch)
+- Display detailed recipes
 
-## Phase 3 (includes API + more polished output)
+## Phase 3 (includes API + more personalization)
 - Polish design
 - App integrates with external recipe API
+- Let user select main ingredient for breakfast (e.g. eggs, yoghurt, fruit, cheese)
+- Let user select preferred types of snack (e.g. savory, sweet, hot, cold)
+- Let user select types of carb and protein for lunch and dinner (e.g. potatoes, rice, chicken, tofu)
+- Let user define a meal plan structure (e.g. meals/day, number of days, recipe yield)
 - App generates a grocery shopping list
 
 

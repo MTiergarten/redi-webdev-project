@@ -133,11 +133,21 @@ userPreferences.addEventListener('submit', function(event) {
     let filteredRecipes = recipe.allRecipes.filter(recipe => restrictions.every(restriction => recipe.category.includes(restriction)));
     //used chatGPT to understand how I could use each item in the array as a condition for my filter - it suggested using the 'every' method
 
+    function randomize() {
+        for (let i = filteredRecipes.length -1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i+1));
+            let k = filteredRecipes[i];
+            filteredRecipes[i] = filteredRecipes[j];
+            filteredRecipes[j] = k;
+        }
+    }
+
+    randomize();
+
     console.log(restrictions);
     console.log(filteredRecipes.length);
     console.log(filteredRecipes);
 
-    // return all the recipes found
     recipesFound.innerHTML = `<h2>Recipes Found:</h2>`;
 
     for (let item of filteredRecipes) {

@@ -36,6 +36,7 @@
 - Allow users to save recipes in a collection (consider Window:local storage https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage ?)
 - Save user preferences to create a new plan, based on a rotation of liked and saved recipes
 - Allow user to customize plan (maybe similar to https://coolors.co/)
+- Import plans/recipes from dietitians
 
 
 ## Product Concept: Jobs to be Done

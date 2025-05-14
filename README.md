@@ -1,7 +1,7 @@
 # Idea: Meal Rotation Planning App
 
-# Development Plan **(due 26/05)**
-## ✅ **Phase 1 (due 13/05)** (working output with limited flexibility)
+# Development Plan | _due 26/05_
+## ✅ Phase 1 | _due 13/05_ (working output with limited flexibility)
 - User selects intolerances, allergies or preferences (e.g. don't recommend peanuts / gluten)
   - [x] ~~To do: form to select intolerances~~
 - App fetches recipes from local database based on user preferences
@@ -11,29 +11,31 @@
 - App generates a 1-week meal plan (e.g. 2 options for each meal (breakfast, lunch, snack and dinner), reused across the week)
   - [x] ~~To do: return plan with randomized recipes to yield enough meals for a week~~
 
-## Phase 2 (due 19/05) (design + more detailed output)
-- Basic responsive design
-- Display detailed recipes
+## ☕ Phase 2 | _due 19/05_ (design)
+- Implement basic responsive design
+  - [ ] Sketch quick paper wireframes for desktop, tablet, mobile
+  - [ ] Design wireframes on Figma
+  - [ ] Define visual style for the project on Figma
+  - [ ] Implement design
 
-## Phase 3 (includes API + more personalization)
-- Polish design
+## Phase 3 | (includes API + more detailed output)
+- Write functions to clean up the code
 - App integrates with external recipe API
-- Let user select main ingredient for breakfast (e.g. eggs, yoghurt, fruit, cheese)
-- Let user select preferred types of snack (e.g. savory, sweet, hot, cold)
-- Let user select types of carb and protein for lunch and dinner (e.g. potatoes, rice, chicken, tofu)
-- Let user define a meal plan structure (e.g. meals/day, number of days, recipe yield)
-- App generates a grocery shopping list
+- Personalization depending on what API offers (eg let user select preferred ingredient for a meal / let user define a meal plan structure selecting n meals/day, n days, n times they want to cook etc)
+- Display detailed recipes (ingredients, instructions, yield)
+- Mockup what the product could look like at a later point in the roadmap
+- Name the product
+- Nice to have: App generates a grocery shopping list
 
-
-## Wishlist - things I might get into after delivering the initial project
+## Wishlist | Things I might get into after delivering the initial project
 - Show calories and macros for each portion
 - Allow user to add their own recipes
-- Allow user to customize portion size (maybe according to calories / macro goals)
+- Allow user to customize portion size (maybe according to calories / macro goals?)
 - Import recipes from links (eg recipe blogs)
-- Rating: suggest more/less/nothing of a recipe
+- Rating recipes: suggest more/less/nothing of a given recipe
 - Allow users to save recipes in a collection (consider Window:local storage https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage ?)
-- Automate rotation plan based on liked and saved recipes, instead of inputting preferences every time
-- Allow user to customize plan selecting recipes (similar to https://coolors.co/)
+- Save user preferences to create a new plan, based on a rotation of liked and saved recipes
+- Allow user to customize plan (maybe similar to https://coolors.co/)
 
 
 ## Product Concept: Jobs to be Done

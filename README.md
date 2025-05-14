@@ -4,7 +4,7 @@
 ## ✅ Phase 1 | _due 13/05_ (working output with limited flexibility)
 - User selects intolerances, allergies or preferences (e.g. don't recommend peanuts / gluten)
   - [x] ~~To do: form to select intolerances~~
-- App fetches recipes from local database based on user preferences
+- App fetches recipes from local database based on user preferences (while no API)
   - [x] ~~To do: Create hardcoded recipe database for testing (while no API)~~
   - [x] ~~To do: DOM manipulation - extract user preferences from the form~~
   - [x] ~~To do: filter recipes by ingredients~~

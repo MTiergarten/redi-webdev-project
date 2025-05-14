@@ -19,13 +19,13 @@
   - [ ] Implement design
 
 ## Phase 3 | (includes API + more detailed output)
-- Write functions to clean up the code
-- App integrates with external recipe API
+- Integrate with external recipe API
 - Personalization depending on what API offers (eg let user select preferred ingredient for a meal / let user define a meal plan structure selecting n meals/day, n days, n times they want to cook etc)
 - Display detailed recipes (ingredients, instructions, yield)
-- Mockup what the product could look like at a later point in the roadmap
+- Write functions to clean up the code
 - Name the product
-- Nice to have: App generates a grocery shopping list
+- Mockup what the product could look like at a later point in the roadmap
+- Nice to have: Generate a grocery shopping list
 
 ## Wishlist | Things I might get into after delivering the initial project
 - Show calories and macros for each portion

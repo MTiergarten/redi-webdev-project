@@ -1,15 +1,15 @@
-class recipe {
+class Recipe { //classes should be named starting with capital letter
 
     static allRecipes = [];
     //used ChatGPT to understand how I could create a command or function inside my class "recipe" to updates my array of recipes when I create a new instance, instead of having to do this manually, so it suggested using the static property
 
-    constructor(name, type, ingredients, portions, category) {
+    constructor(name, type, ingredients, portions, categories) {
         this.name = name;
         this.type = type;
         this.ingredients = ingredients;
         this.portions = portions;
-        this.category = category;
-        recipe.allRecipes.push(this);
+        this.categories = categories;
+        Recipe.allRecipes.push(this);
     }
 
     printRecipe(name, type, ingredients, portions) {
@@ -17,57 +17,57 @@ class recipe {
         console.log(this.type.toString());
         console.log("Ingredients: " + this.ingredients.toString());
         console.log("Portions: " + this.portions);
-        console.log("Category: " + this.category.toString());
+        console.log("Category: " + this.categories.toString());
     }
 
     static listRecipes() {
-        return recipe.allRecipes;
+        return Recipe.allRecipes;
     }
 }
 
-const eggs = new recipe(
+const eggs = new Recipe(
     'Eggs On Toast With Cheese',
     ['breakfast'],
     ['50g bread (1 bun or 2 slices of toast)', '2 eggs (scrambled or omelet)', '20g cheese of choice'],
     1);
-eggs.category = ['nuts', 'seafood', 'vegetarian']
+eggs.categories = ['nuts', 'seafood', 'vegetarian']
 
-const couscous = new recipe(
+const couscous = new Recipe(
     'Corn Couscous With Cheese',
     ['breakfast'],
     ['40g corn couscous', '1 tsp butter', '60ml water', 'Salt to taste', '20g cheese of choice'],
     1);
-couscous.category = ['gluten', 'nuts', 'seafood', 'vegetarian'];
+couscous.categories = ['gluten', 'nuts', 'seafood', 'vegetarian'];
 
-const oatmeal = new recipe(
+const oatmeal = new Recipe(
     'High Protein Oatmeal',
     ['breakfast'],
     ['1 banana', '120ml milk of choice', '1 tbsp peanut butter', '20g protein powder of choice', '25g oats'],
     1);
-oatmeal.category = ['dairy', 'gluten', 'seafood', 'vegetarian', 'vegan'];
+oatmeal.categories = ['dairy', 'gluten', 'seafood', 'vegetarian', 'vegan'];
 
-const bolognese = new recipe(
+const bolognese = new Recipe(
     'Simplified Bolognese Pasta',
     ['lunch', 'dinner'],
     ['250g whole wheat fusilli pasta', '400g minced meat', '200g tomato sauce', '1 tbsp tomato sauce', '1/2 finely diced onion', '1 grated clove of garlic', 'Season to taste: salt, black pepper, cayenne pepper, smoked paprika'],
     3);
-bolognese.category = ['dairy', 'gluten', 'seafood', 'nuts'];
+bolognese.categories = ['dairy', 'gluten', 'seafood', 'nuts'];
 
-const chicken = new recipe(
+const chicken = new Recipe(
     'Grilled Chicken with Herb Potatoes',
     ['lunch', 'dinner'],
     ['400g chicken breast (butterflied)', '1 lime', '1 grated clove or garlic', '2 tbsp olive oil', 'Season to taste: salt and black pepper', '700g potatoes, cut into 1 inch cubes: season to taste with wild garlic, pesto or parsley after boiling'],
     3);
-chicken.category = ['dairy', 'gluten', 'seafood', 'nuts'];
+chicken.categories = ['dairy', 'gluten', 'seafood', 'nuts'];
 
-const pork = new recipe(
+const pork = new Recipe(
     'Roasted Pork Tenderloin with Mashed Potatoes',
     ['lunch', 'dinner'],
     ['700g potatoes (peeled and quartered)', '30g butter', '100ml milk of choice', 'Season to taste: salt, nutmeg, garlic powder and black pepper', '400g pork tenderloin', '2 tbsp olive oil', '2 cloves garlic', '1 tsp paprika', 'Season to taste: salt and black pepper'],
     3);
-pork.category = ['gluten', 'seafood', 'nuts'];
+pork.categories = ['gluten', 'seafood', 'nuts'];
 
-const wrap = new recipe(
+const wrap = new Recipe(
     'Chicken Wrap',
     ['lunch', 'dinner'],
     ['400g chicken breast', '400g tomato basil sauce', '1/2 finely diced onion', '1 grated garlic clove', 'Season to taste: salt, black pepper', '60g light mayo', '3 tortillas'],
@@ -75,47 +75,47 @@ const wrap = new recipe(
     ['dairy', 'nuts', 'seafood']
 )
 
-const salad1 = new recipe(
+const salad1 = new Recipe(
     'Green Salad',
     ['veggies'],
     ['Mixed fresh green leaves', 'Olive oil and balsamic dressing'],
     1);
-salad1.category = ['dairy', 'gluten', 'nuts', 'seafood', 'vegetarian', 'vegan'];
+salad1.categories = ['dairy', 'gluten', 'nuts', 'seafood', 'vegetarian', 'vegan'];
 
-const salad2 = new recipe(
+const salad2 = new Recipe(
     'Mixed Salad',
     ['veggies'],
     ['Diced tomatoes', 'Sliced cucumber', 'Sliced red onion', 'Sliced bell peppers', 'Lettuce or arugula', 'Olive oil and apple cider vinegar dressing'],
     1);
-salad2.category = ['dairy', 'gluten', 'nuts', 'seafood', 'vegetarian', 'vegan'];
+salad2.categories = ['dairy', 'gluten', 'nuts', 'seafood', 'vegetarian', 'vegan'];
 
-const veggies = new recipe(
+const veggies = new Recipe(
     'Steamed Veggie Mix',
     ['veggies'],
     ['Mixed veggies fresh or frozen', 'Season to taste: salt, black pepper, paprika'],
     1);
-veggies.category = ['dairy', 'gluten', 'nuts', 'seafood', 'vegetarian', 'vegan'];
+veggies.categories = ['dairy', 'gluten', 'nuts', 'seafood', 'vegetarian', 'vegan'];
 
-const tuna = new recipe(
+const tuna = new Recipe(
     'Tuna Sandwich',
     ['snack'],
     ['1 can of tuna (in brine)', '2 tbsp light teriyaki sauce', '2 tbsp light mayo', '4 slices of toast', 'Optional: lettuce, sliced red onion'],
     2);
-tuna.category = ['dairy', 'nuts'];
+tuna.categories = ['dairy', 'nuts'];
 
-const yoghurt = new recipe(
+const yoghurt = new Recipe(
     'Yoghurt Bowl with Fruits',
     ['snack'],
     ['150g greek yoghurt', '15g protein of choice', '150g fruit of choice', 'Optional: 1 tbsp honey'],
     1);
-yoghurt.category = ['gluten', 'nuts', 'seafood', 'vegetarian'];
+yoghurt.categories = ['gluten', 'nuts', 'seafood', 'vegetarian'];
 
-const grilledCheese = new recipe(
+const grilledCheese = new Recipe(
     'Grilled Cheese',
     ['snack'],
     ['2 slices of toast', '25g soft cheese of choice', '1 tsp butter'],
     1);
-grilledCheese.category = ['nuts', 'seafood', 'vegetarian'];
+grilledCheese.categories = ['nuts', 'seafood', 'vegetarian'];
 
 
 const userPreferences = document.getElementById('userPreferences');
@@ -138,15 +138,15 @@ userPreferences.addEventListener('submit', function(event) {
         }
     }
 
-    let filteredRecipes = recipe.allRecipes.filter(recipe => restrictions.every(restriction => recipe.category.includes(restriction)));
+    let filteredRecipes = Recipe.allRecipes.filter(recipe => restrictions.every(restriction => recipe.category.includes(restriction)));
     //used chatGPT to understand how I could use each item in the array as a condition for my filter - it suggested using the 'every' method
 
     function randomize(arr) {
         for (let i = arr.length -1; i > 0; i--) {
-            let j = Math.floor(Math.random() * (i+1));
-            let k = arr[i];
-            arr[i] = arr[j];
-            arr[j] = k;
+            let randomIndex = Math.floor(Math.random() * (i+1));
+            let currentElement = arr[i];
+            arr[i] = arr[randomIndex];
+            arr[randomIndex] = currentElement;
         }
     }
 
@@ -175,7 +175,7 @@ userPreferences.addEventListener('submit', function(event) {
             breakfastRecipes.textContent = breakfastPlan[a].name;
             document.getElementById('breakfast').appendChild(breakfastRecipes);
             a++
-        } else if (breakfastPlan.length == 1) {
+        } else if (breakfastPlan.length === 1) {
             const breakfastRecipes = document.createElement('li');
             breakfastRecipes.textContent = breakfastPlan[a].name;
             document.getElementById('breakfast').appendChild(breakfastRecipes);
@@ -195,12 +195,12 @@ userPreferences.addEventListener('submit', function(event) {
     while (b <= 1) {
         if (lunchPlan.length >= 2) {
             const lunchRecipes = document.createElement('li');
-            lunchRecipes.textContent = lunchPlan[b].name + ` and ` + veggies[b].name;
+            lunchRecipes.textContent = lunchPlan[b].name + ' and ' + veggies[b].name;
             document.getElementById('lunch').appendChild(lunchRecipes);
             b++
-        } else if (lunchPlan.length == 1) {
+        } else if (lunchPlan.length === 1) {
             const lunchRecipes = document.createElement('li');
-            lunchRecipes.textContent = lunchPlan[b].name + ` and ` + veggies[b].name;
+            lunchRecipes.textContent = lunchPlan[b].name + ' and ' + veggies[b].name;
             document.getElementById('lunch').appendChild(lunchRecipes);
             break
         } else {
@@ -220,7 +220,7 @@ userPreferences.addEventListener('submit', function(event) {
             snackRecipes.textContent = snackPlan[c].name;
             document.getElementById('snack').appendChild(snackRecipes);
             c++
-        } else if (snackPlan.length == 1) {
+        } else if (snackPlan.length === 1) {
             const snackRecipes = document.createElement('li');
             snackRecipes.textContent = snackPlan[c].name;
             document.getElementById('snack').appendChild(snackRecipes);
@@ -240,12 +240,12 @@ userPreferences.addEventListener('submit', function(event) {
     while (d <= 1) {
         if (dinnerPlan.length >= 2) {
             const dinnerRecipes = document.createElement('li');
-            dinnerRecipes.textContent = dinnerPlan[d].name + ` and ` + veggies[d].name;
+            dinnerRecipes.textContent = dinnerPlan[d].name + ' and ' + veggies[d].name;
             document.getElementById('dinner').appendChild(dinnerRecipes);
             d++
-        } else if (dinnerPlan.length == 1) {
+        } else if (dinnerPlan.length === 1) {
             const dinnerRecipes = document.createElement('li');
-            dinnerRecipes.textContent = dinnerPlan[d].name + ` and ` + veggies[d].name;
+            dinnerRecipes.textContent = dinnerPlan[d].name + ' and ' + veggies[d].name;
             document.getElementById('dinner').appendChild(dinnerRecipes);
             break
         } else {

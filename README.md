@@ -13,8 +13,13 @@
 
 ## ☕ Phase 2 | _due 19/05_ (design)
 - Implement basic responsive design
-  - [ ] Sketch quick paper wireframes for desktop, tablet, mobile
-  - [ ] Design wireframes on Figma
+  - [x] ~~Sketch quick paper wireframes for desktop, tablet, mobile~~
+    - ref breakpoints: https://getbootstrap.com/docs/5.0/layout/breakpoints/)
+    - sketch:
+    - ![Wireframes sketch](./wireframeSketch.png)
+  - [x] ~~Design wireframes on Figma~~
+    - wireframes:
+    - ![Wireframes Figma](./wireframeFigma.png)
   - [ ] Define visual style for the project on Figma
   - [ ] Implement design
 

@@ -26,15 +26,15 @@
 
 ## Phase 3 | (includes API + more detailed output)
 - Integrate with external recipe API
-- Add photo and instructions
-- Personalization depending on what API offers (eg let user select preferred ingredient for a meal / let user define a meal plan structure selecting n meals/day, n days, n times they want to cook etc)
-- Display detailed recipes (ingredients, instructions, yield)
-- Write functions to clean up the code
-- Name the product
-- Mockup what the product could look like at a later point in the roadmap
+- Display photo for each recipe
+- Display ingredients and instructions for each recipe
+- Come up with a better name
+- Nice to have: more personalization depending on what API offers (eg let user select preferred ingredient for a meal / let user define a meal plan structure selecting n meals/day, n days, n times they want to cook etc)
 - Nice to have: Generate a grocery shopping list
 
 ## Wishlist | Things I might get into after delivering the initial project
+- Write functions to clean up the code
+- Button to clear filter selection
 - Show calories and macros for each portion
 - Allow user to add their own recipes
 - Allow user to customize portion size (maybe according to calories / macro goals?)

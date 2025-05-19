@@ -11,7 +11,7 @@
 - App generates a 1-week meal plan (e.g. 2 options for each meal (breakfast, lunch, snack and dinner), reused across the week)
   - [x] ~~To do: return plan with randomized recipes to yield enough meals for a week~~
 
-## ☕ Phase 2 | _due 19/05_ (design)
+## ☕ Phase 2 | _due 20/05_ (design)
 - Implement basic responsive design
   - [x] ~~Sketch quick paper wireframes for desktop, tablet, mobile~~
     - ref breakpoints: https://getbootstrap.com/docs/5.0/layout/breakpoints/)
@@ -20,11 +20,13 @@
   - [x] ~~Design wireframes on Figma~~
     - wireframes:
     - ![Wireframes Figma](./wireframeFigma.png)
-  - [ ] Define visual style for the project on Figma
-  - [ ] Implement design
+  - [x] ~~Define visual style for the project on Figma~~
+  - [x] Implement design (mobile first)
+  - [ ] Implement responsive design (tablet + desktop)
 
 ## Phase 3 | (includes API + more detailed output)
 - Integrate with external recipe API
+- Add photo and instructions
 - Personalization depending on what API offers (eg let user select preferred ingredient for a meal / let user define a meal plan structure selecting n meals/day, n days, n times they want to cook etc)
 - Display detailed recipes (ingredients, instructions, yield)
 - Write functions to clean up the code
@@ -42,6 +44,7 @@
 - Save user preferences to create a new plan, based on a rotation of liked and saved recipes
 - Allow user to customize plan (maybe similar to https://coolors.co/)
 - Import plans/recipes from dietitians
+- Suggestions: a recipe you might like for the weekend
 
 
 ## Product Concept: Jobs to be Done

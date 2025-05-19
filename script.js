@@ -122,9 +122,13 @@ const userPreferences = document.getElementById('userPreferences');
 const checkRestrictions = userPreferences.querySelectorAll('input[type="checkbox"]');
 const recipesFound = document.getElementById('recipesFound');
 const mealPlan = document.getElementById('mealPlan');
+const breakfastTitle = document.getElementById('breakfastTitle');
 const breakfast = document.getElementById('breakfast');
+const lunchTitle = document.getElementById('lunchTitle');
 const lunch = document.getElementById('lunch');
+const snackTitle = document.getElementById('snackTitle');
 const snack = document.getElementById('snack');
+const dinnerTitle = document.getElementById('dinnerTitle');
 const dinner = document.getElementById('dinner');
 //used chatGPT to understand the difference between elements that can / can't be iterable in a DOM manipulation - and how to create a variable to target all the checkboxes in my form to run in a loop
 
@@ -152,20 +156,21 @@ userPreferences.addEventListener('submit', function(event) {
 
     randomize(filteredRecipes);
 
-    console.log(restrictions);
-    console.log(filteredRecipes);
+    // recipesFound.innerHTML = `<h2>Recipes Found:</h2>`;
 
-    recipesFound.innerHTML = `<h2>Recipes Found:</h2>`;
+    // for (let item of filteredRecipes) {
+    //     const planRecipes = document.createElement('li');
+    //     planRecipes.textContent = item.name;
+    //     document.getElementById('recipesFound').appendChild(planRecipes);
+    // }
 
-    for (let item of filteredRecipes) {
-        const planRecipes = document.createElement('li');
-        planRecipes.textContent = item.name;
-        document.getElementById('recipesFound').appendChild(planRecipes);
-    }
+    mealPlan.innerHTML = `<h1>My Meal Plan:</h1>`;
 
-    mealPlan.innerHTML = `<h2>Meal Plan for the Week:</h2>`;
-
-    breakfast.innerHTML = `<h3>Breakfast Options:</h3>`;
+    breakfastTitle.innerHTML = `<h3>Breakfast</h3>`;
+    const breakfastContainer = document.getElementById('breakfast');
+    breakfastContainer.innerHTML = '';
+    breakfast.classList.add('meal-container');
+    breakfast.classList.add('container-bg');
     let breakfastPlan = filteredRecipes.filter(recipe => recipe.type.includes('breakfast'));
     console.log(breakfastPlan);
     let a = 0
@@ -188,7 +193,11 @@ userPreferences.addEventListener('submit', function(event) {
         }
     }
 
-    lunch.innerHTML = `<h3>Lunch Options:</h3>`;
+    lunchTitle.innerHTML = `<h3>Lunch</h3>`;
+    const lunchContainer = document.getElementById('lunch');
+    lunchContainer.innerHTML = '';
+    lunch.classList.add('meal-container');
+    lunch.classList.add('container-bg');
     let lunchPlan = filteredRecipes.filter(recipe => recipe.type.includes('lunch'));
     let veggies = filteredRecipes.filter(recipe => recipe.type.includes('veggies'));
     let b = 0
@@ -211,7 +220,11 @@ userPreferences.addEventListener('submit', function(event) {
         }
     }
 
-    snack.innerHTML = `<h3>Snack Options:</h3>`;
+    snackTitle.innerHTML = `<h3>Snack</h3>`;
+    const snackContainer = document.getElementById('snack');
+    snackContainer.innerHTML = '';
+    snack.classList.add('meal-container');
+    snack.classList.add('container-bg');
     let snackPlan = filteredRecipes.filter(recipe => recipe.type.includes('snack'));
     let c = 0
     while (c <= 1) {
@@ -233,7 +246,11 @@ userPreferences.addEventListener('submit', function(event) {
         }
     }
 
-    dinner.innerHTML = `<h3>Dinner Options:</h3>`;
+    dinnerTitle.innerHTML = `<h3>Dinner</h3>`;
+    const dinnerContainer = document.getElementById('dinner');
+    dinnerContainer.innerHTML = '';
+    dinner.classList.add('meal-container');
+    dinner.classList.add('container-bg');
     let dinnerPlan = filteredRecipes.filter(recipe => recipe.type.includes('dinner'));
     randomize(dinnerPlan)
     let d = 0

@@ -1,15 +1,14 @@
 # Idea: Meal Rotation Planning App
 
 # Development Plan | _due 26/05_
-## ✅ Phase 1 | _due 13/05_ (working output with limited flexibility)
-- User selects intolerances, allergies or preferences (e.g. don't recommend peanuts / gluten)
-  - [x] ~~To do: form to select intolerances~~
-- App fetches recipes from local database based on user preferences (while no API)
-  - [x] ~~To do: Create hardcoded recipe database for testing (while no API)~~
-  - [x] ~~To do: DOM manipulation - extract user preferences from the form~~
-  - [x] ~~To do: filter recipes by ingredients~~
-- App generates a 1-week meal plan (e.g. 2 options for each meal (breakfast, lunch, snack and dinner), reused across the week)
-  - [x] ~~To do: return plan with randomized recipes to yield enough meals for a week~~
+
+## ☕ Phase 3 | _due 26/05_ (implement API + more detailed output)
+- [ ] Integrate with external recipe API
+- [ ] Display photo for each recipe
+- [ ] Display ingredients and instructions for each recipe
+- [ ] Name the app
+- [ ] Nice to have: more personalization depending on what API offers (eg let user select preferred ingredient for a meal / let user define a meal plan structure selecting n meals/day, n days, n times they want to cook etc)
+- [ ] Nice to have: Generate a grocery shopping list
 
 ## ✅ Phase 2 | _due 20/05_ (design)
 - Implement basic responsive design
@@ -24,15 +23,17 @@
   - [x] ~~Implement design (mobile first)~~
   - [x] ~~Implement responsive design (tablet + desktop)~~
 
-## ☕ Phase 3 | _due 26/05_ (implement API + more detailed output)
-- [ ] Integrate with external recipe API
-- [ ] Display photo for each recipe
-- [ ] Display ingredients and instructions for each recipe
-- [ ] Name the app
-- [ ] Nice to have: more personalization depending on what API offers (eg let user select preferred ingredient for a meal / let user define a meal plan structure selecting n meals/day, n days, n times they want to cook etc)
-- [ ] Nice to have: Generate a grocery shopping list
+## ✅ Phase 1 | _due 13/05_ (working output with limited flexibility)
+- User selects intolerances, allergies or preferences (e.g. don't recommend peanuts / gluten)
+  - [x] ~~To do: form to select intolerances~~
+- App fetches recipes from local database based on user preferences (while no API)
+  - [x] ~~To do: Create hardcoded recipe database for testing (while no API)~~
+  - [x] ~~To do: DOM manipulation - extract user preferences from the form~~
+  - [x] ~~To do: filter recipes by ingredients~~
+- App generates a 1-week meal plan (e.g. 2 options for each meal (breakfast, lunch, snack and dinner), reused across the week)
+  - [x] ~~To do: return plan with randomized recipes to yield enough meals for a week~~
 
-## Wishlist | Things I might get into after delivering the initial project
+## 💭 Wishlist | Things I might get into after delivering the initial project
 - Write functions to clean up the code
 - Button to clear filter selection
 - Show calories and macros for each portion

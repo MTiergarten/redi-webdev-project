@@ -11,7 +11,7 @@
 - App generates a 1-week meal plan (e.g. 2 options for each meal (breakfast, lunch, snack and dinner), reused across the week)
   - [x] ~~To do: return plan with randomized recipes to yield enough meals for a week~~
 
-## ☕ Phase 2 | _due 20/05_ (design)
+## ✅ Phase 2 | _due 20/05_ (design)
 - Implement basic responsive design
   - [x] ~~Sketch quick paper wireframes for desktop, tablet, mobile~~
     - ref breakpoints: https://getbootstrap.com/docs/5.0/layout/breakpoints/)
@@ -21,16 +21,16 @@
     - wireframes:
     - ![Wireframes Figma](./wireframeFigma.png)
   - [x] ~~Define visual style for the project on Figma~~
-  - [x] Implement design (mobile first)
-  - [ ] Implement responsive design (tablet + desktop)
+  - [x] ~~Implement design (mobile first)~~
+  - [x] ~~Implement responsive design (tablet + desktop)~~
 
-## Phase 3 | (includes API + more detailed output)
-- Integrate with external recipe API
-- Display photo for each recipe
-- Display ingredients and instructions for each recipe
-- Come up with a better name
-- Nice to have: more personalization depending on what API offers (eg let user select preferred ingredient for a meal / let user define a meal plan structure selecting n meals/day, n days, n times they want to cook etc)
-- Nice to have: Generate a grocery shopping list
+## ☕ Phase 3 | _due 26/05_ (implement API + more detailed output)
+- [ ] Integrate with external recipe API
+- [ ] Display photo for each recipe
+- [ ] Display ingredients and instructions for each recipe
+- [ ] Name the app
+- [ ] Nice to have: more personalization depending on what API offers (eg let user select preferred ingredient for a meal / let user define a meal plan structure selecting n meals/day, n days, n times they want to cook etc)
+- [ ] Nice to have: Generate a grocery shopping list
 
 ## Wishlist | Things I might get into after delivering the initial project
 - Write functions to clean up the code

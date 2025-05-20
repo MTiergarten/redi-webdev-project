@@ -69,7 +69,15 @@ p {
 /* containers */
 
 .header {
-    margin: 1rem auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: var(--primary-bg);
+    box-shadow: 0 1px 5px 0 rgb(48, 56, 65, 0.2);
 }
 
 .content {
@@ -166,5 +174,38 @@ p {
 /* responsive layout - desktop */
 
 @media only screen and (min-width: 992px) {
+    .content {
+        display: flex;
+        flex-direction: row;
+    }
 
+    .left-content {
+        display: flex;
+        flex-direction: column;
+        width: 33%;
+        margin-right: 2rem;
+    }
+
+    .input-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        gap: 1rem;
+    }
+
+    .right-content {
+        display: flex;
+        flex-direction: column;
+        width: 67%;
+        padding-top: 1rem;
+    }
+}
+
+/* responsive layout - large desktop */
+
+@media only screen and (min-width: 1720px) {
+    .content {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }

@@ -11,76 +11,64 @@
     <header class = "header">
         <h1>Meal Rotation Planner</h1>
     </header>
-
     <main class="content">
-        <div class = "input-description">
-            <p>Pick your dietary preferences below:</p>
-            <p class = "body-text">Select all that apply</p>
-        </div>
-
-        <form id = "userPreferences">
-
-            <div class = "input-container container-bg">
-
-                <div class = "input-item">
-                    <input type = "checkbox" id = "dairy" name = "dairy">
-                    <label for = "dairy" class ="body-text">Dairy Free</label>
-                </div>
-
-                <div class = "input-item">
-                    <input type = "checkbox" id = "gluten" name = "gluten">
-                    <label for = "gluten" class = "body-text">Gluten Free</label>
-                </div>
-
-                <div class = "input-item">
-                    <input type = "checkbox" id = "nuts" name = "nuts">
-                    <label for = "nuts" class = "body-text">Nut Allergy</label>
-                </div>
-
-                <div class = "input-item">
-                    <input type = "checkbox" id = "seafood" name = "seafood">
-                    <label for = "seafood" class = "body-text">Seafood Allergy</label>
-                </div>
-
-                <div class = "input-item">
-                    <input type = "checkbox" id = "vegetarian" name = "vegetarian">
-                    <label for = "vegetarian" class = "body-text">Vegetarian</label>
-                </div>
-
-                <div class = "input-item">
-                    <input type = "checkbox" id = "vegan" name = "vegan">
-                    <label for = "vegan" class = "body-text">Vegan</label>
-                </div>
-
+        <div class="left-content">
+            <div class = "input-description">
+                <p>Pick your dietary preferences below:</p>
+                <p class = "body-text">Select all that apply</p>
             </div>
-
-            <input class = "button" type = "submit" value="Submit">
-
+            <form id = "userPreferences">
+                <div class = "input-container container-bg">
+                    <div class = "input-item">
+                        <input type = "checkbox" id = "dairy" name = "dairy">
+                        <label for = "dairy" class ="body-text">Dairy Free</label>
+                    </div>
+                    <div class = "input-item">
+                        <input type = "checkbox" id = "gluten" name = "gluten">
+                        <label for = "gluten" class = "body-text">Gluten Free</label>
+                    </div>
+                    <div class = "input-item">
+                        <input type = "checkbox" id = "nuts" name = "nuts">
+                        <label for = "nuts" class = "body-text">Nut Allergy</label>
+                    </div>
+                    <div class = "input-item">
+                        <input type = "checkbox" id = "seafood" name = "seafood">
+                        <label for = "seafood" class = "body-text">Seafood Allergy</label>
+                    </div>
+                    <div class = "input-item">
+                        <input type = "checkbox" id = "vegetarian" name = "vegetarian">
+                        <label for = "vegetarian" class = "body-text">Vegetarian</label>
+                    </div>
+                    <div class = "input-item">
+                        <input type = "checkbox" id = "vegan" name = "vegan">
+                        <label for = "vegan" class = "body-text">Vegan</label>
+                    </div>
+                </div>
+                <input class = "button" type = "submit" value="Submit">
+            </form>
+        </div>
+        <div class="right-content">
             <ul id="recipesFound"></ul>
             <ul id="mealPlan"></ul>
-
             <div class="plan-container">
                 <div class="meal-wrapper">
                     <h3 id="breakfastTitle"></h3>
                     <ul id="breakfast"></ul>
                 </div>
-
                 <div class="meal-wrapper">
                     <h3 id="lunchTitle"></h3>
                     <ul id="lunch"></ul>
                 </div>
-
                 <div class="meal-wrapper">
                     <h3 id="snackTitle"></h3>
                     <ul id="snack"></ul>
                 </div>
-
                 <div class="meal-wrapper">
                     <h3 id="dinnerTitle"></h3>
                     <ul id="dinner"></ul>
                 </div>
             </div>
-        </form>
+        </div>
     </main>
     <script src="script.js"></script>
 </body>

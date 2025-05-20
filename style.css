@@ -130,7 +130,7 @@ p {
 /* button */
 
 .button {
-    margin: 1rem 0;
+    margin: 1rem 0 2rem 0;
     padding: 1rem;
     width: 100%;
     border: var(--accent) 1px solid;

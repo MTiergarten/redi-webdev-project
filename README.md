@@ -19,6 +19,7 @@
   - [x] ~~Design wireframes on Figma~~
     - wireframes:
     - ![Wireframes Figma](./wireframeFigma.png)
+    - [Click to Access Figma File](https://www.figma.com/design/UBPPA8SqRHvv5BVn6uhY4d/Meal-Planner?node-id=0-1&t=xfkfwliooCBffYU8-1)
   - [x] ~~Define visual style for the project on Figma~~
   - [x] ~~Implement design (mobile first)~~
   - [x] ~~Implement responsive design (tablet + desktop)~~

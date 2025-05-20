@@ -5,7 +5,7 @@
 ## ☕ Phase 3 | _due 26/05_ (implement API + more detailed output)
 - [ ] Integrate with external recipe API
 - [ ] Display photo for each recipe
-- [ ] Display ingredients and instructions for each recipe
+- [ ] Add accordion to display each recipe's details
 - [ ] Name the app
 - [ ] Nice to have: more personalization depending on what API offers (eg let user select preferred ingredient for a meal / let user define a meal plan structure selecting n meals/day, n days, n times they want to cook etc)
 - [ ] Nice to have: Generate a grocery shopping list

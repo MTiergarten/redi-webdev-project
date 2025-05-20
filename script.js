@@ -120,7 +120,7 @@ grilledCheese.categories = ['nuts', 'seafood', 'vegetarian'];
 
 const userPreferences = document.getElementById('userPreferences');
 const checkRestrictions = userPreferences.querySelectorAll('input[type="checkbox"]');
-const recipesFound = document.getElementById('recipesFound');
+// const recipesFound = document.getElementById('recipesFound');
 const mealPlan = document.getElementById('mealPlan');
 const breakfastTitle = document.getElementById('breakfastTitle');
 const breakfast = document.getElementById('breakfast');

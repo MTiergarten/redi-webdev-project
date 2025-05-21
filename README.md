@@ -3,7 +3,7 @@
 # Development Plan | _due 26/05_
 
 ## ☕ Phase 3 | _due 26/05_ (implement API + more detailed output)
-- [ ] Integrate with external recipe API
+- [x] Integrate with external recipe API ([Spoonacular](https://spoonacular.com/food-api/docs))
 - [ ] Display photo for each recipe
 - [ ] Add accordion to display each recipe's details
 - [ ] Let user pick how many ideas they want per meal (counter 1 to 7)
@@ -14,6 +14,7 @@
 - [ ] "Finding recipes..." (1s delay with animated state on button?)
 - [ ] Visual:
   - [ ] custom checkboxes
+  - [ ] add min-width
   - [ ] implement color palette / gradient BG
   - [ ] add emojis?
  

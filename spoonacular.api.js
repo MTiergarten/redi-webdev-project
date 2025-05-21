@@ -1,18 +1,37 @@
 // Spoonacular Doc: https://spoonacular.com/food-api/docs
 
-async function findVegetarian() {
-    const apiKey = '582a62bc2bef47c9a0e3aededb18d8bc';
-    let endpoint = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=582a62bc2bef47c9a0e3aededb18d8bc&diet=vegetarian'; // question mark at end of endpoint url (https://api.spoonacular.com/recipes/complexSearch) indicates that parameters are starting
-    const fetchResponse = await fetch(endpoint);
-    const convertResponse = await fetchResponse.json();
-    console.log(convertResponse);
+const apiKey = '582a62bc2bef47c9a0e3aededb18d8bc';
+
+async function findPreferences() {
+    let endpoint = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=582a62bc2bef47c9a0e3aededb18d8bc&type=breakfast'; // question mark at end of endpoint url (https://api.spoonacular.com/recipes/complexSearch) indicates that parameters are starting
+    const fetchResponse = await fetch(endpoint); //sending request to API. Fetch returns a response object, not actual data yet
+    const convertResponse = await fetchResponse.json(); //parsing this HTTP object into a usable JavaScript object
+    const recipesArray = convertResponse.results; //accessing the "results" field of the JS object, which is an array of objects that can now have array methods applied to it
+    console.log((recipesArray.length) + ' recipes found:');
+    console.log(recipesArray);
 }
 
-// dietaryPreferences (['dairy', 'gluten', 'nuts', 'seafood', 'vegetarian', 'vegan']
+// dietaryPreferences (['dairy', 'gluten', 'peanut', 'seafood', 'vegetarian', 'vegan']
 // https://spoonacular.com/food-api/docs#Diets : Gluten Free, Vegetarian, Vegan
 // https://spoonacular.com/food-api/docs#Intolerances : Dairy, Gluten, Peanut, Seafood
 
-findVegetarian();
+//NOTE: change nuts to peanut, seafood to shellfish (according to API docs)
+
+// Dairy Free: intolerances=dairy
+// Gluten Free: intolerances=gluten
+// peanut: intolerances=peanut
+// Shellfish: intolerances=shellfish
+// Vegetarian: diet=vegetarian
+// Vegan: diet=vegan
+
+
+// mealTypes https://spoonacular.com/food-api/docs#Meal-Types
+// Breakfast: type=breakfast
+// Lunch: type=main course
+// Snack: type=snack
+// Dinner: type=main course (how to search?)
+
+findPreferences();
 // Recipes: https://spoonacular.com/food-api/docs#Search-Recipes-Complex --- This method combines searching by query, by ingredients, and by nutrients into one endpoint
 // Images: https://spoonacular.com/food-api/docs#Show-Images
 // https://spoonacular.com/food-api/docs#Authentication

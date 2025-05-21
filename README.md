@@ -6,10 +6,17 @@
 - [ ] Integrate with external recipe API
 - [ ] Display photo for each recipe
 - [ ] Add accordion to display each recipe's details
+- [ ] Let user pick how many ideas they want per meal (counter 1 to 7)
+- [ ] Let use toggle meals on/off (eg only lunch and dinner)
 - [ ] Name the app
 - [ ] Nice to have: more personalization depending on what API offers (eg let user select preferred ingredient for a meal / let user define a meal plan structure selecting n meals/day, n days, n times they want to cook etc)
-- [ ] Nice to have: Generate a grocery shopping list
-
+- [ ] Let user regenerate individual recipes in the meal plan
+- [ ] "Finding recipes..." (1s delay with animated state on button?)
+- [ ] Visual:
+  - [ ] custom checkboxes
+  - [ ] implement color palette / gradient BG
+  - [ ] add emojis?
+ 
 ## ✅ Phase 2 | _due 20/05_ (design)
 - Implement basic responsive design
   - [x] ~~Sketch quick paper wireframes for desktop, tablet, mobile~~
@@ -34,8 +41,7 @@
 - App generates a 1-week meal plan (e.g. 2 options for each meal (breakfast, lunch, snack and dinner), reused across the week)
   - [x] ~~To do: return plan with randomized recipes to yield enough meals for a week~~
 
-## 💭 Wishlist | Things I might get into after delivering the initial project
-- Write functions to clean up the code
+## 💭 Wishlist of future improvements
 - Button to clear filter selection
 - Show calories and macros for each portion
 - Allow user to add their own recipes
@@ -46,6 +52,7 @@
 - Save user preferences to create a new plan, based on a rotation of liked and saved recipes
 - Allow user to customize plan (maybe similar to https://coolors.co/)
 - Import plans/recipes from dietitians
+- Allow to filter by level of difficulty
 - Suggestions: a recipe you might like for the weekend
 
 

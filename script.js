@@ -1,9 +1,37 @@
 const userPreferences = document.getElementById('userPreferences');
+const checkDietaryPreferences = userPreferences.querySelectorAll('input[type="checkbox"]');
+//used chatGPT to understand the difference between elements that can / can't be iterable in a DOM manipulation - and how to create a variable to target all the checkboxes in my form to run in a loop
+
+// arrays with possible options for diet and intolerance (according to parameters and values of the API)
+const dietOptions = ['vegetarian', 'vegan']
+const intoleranceOptions = ['dairy', 'gluten', 'peanut', 'shellfish']
+
+// meal plan output
+const mealPlan = document.getElementById('mealPlan');
+const breakfastTitle = document.getElementById('breakfastTitle');
+const breakfastContainer = document.getElementById('breakfast');
+const breakfast = document.getElementById('breakfast');
+const lunchTitle = document.getElementById('lunchTitle');
+const lunchContainer = document.getElementById('lunch');
+const lunch = document.getElementById('lunch');
+const snackTitle = document.getElementById('snackTitle');
+const snackContainer = document.getElementById('snack');
+const snack = document.getElementById('snack');
+const dinnerTitle = document.getElementById('dinnerTitle');
+const dinnerContainer = document.getElementById('dinner');
+const dinner = document.getElementById('dinner');
+
+function randomize(arr) {
+    for (let i = arr.length -1; i > 0; i--) {
+        let randomIndex = Math.floor(Math.random() * (i+1));
+        let currentElement = arr[i];
+        arr[i] = arr[randomIndex];
+        arr[randomIndex] = currentElement;
+    }
+}
+
 userPreferences.addEventListener('submit', function(event) {
     event.preventDefault();
-
-    const checkDietaryPreferences = userPreferences.querySelectorAll('input[type="checkbox"]');
-    //used chatGPT to understand the difference between elements that can / can't be iterable in a DOM manipulation - and how to create a variable to target all the checkboxes in my form to run in a loop
 
     const selectedDietaryPreferences = []
     for (let item of checkDietaryPreferences) {
@@ -12,34 +40,28 @@ userPreferences.addEventListener('submit', function(event) {
         }
     }
 
-    // arrays with possible options for diet and intolerance (according to parameters and values of the API)
-    const dietOptions = ['vegetarian', 'vegan']
-    const intoleranceOptions = ['dairy', 'gluten', 'peanut', 'shellfish']
-
     // isolating intolerance and diet inputs to add to API request query, separated by comma as per API docs
     function getIntolerances(selectedDietaryPreferences, dietOptions) {
         const filterDiets = selectedDietaryPreferences.filter(function(item) {
             return !dietOptions.includes(item);
         });
-        const intolerances = filterDiets.join(',');
-        return intolerances;
-
+        return filterDiets.join(',');
     }
+
     const intolerances = getIntolerances(selectedDietaryPreferences, dietOptions);
 
     function getDiets(selectedDietaryPreferences, intoleranceOptions) {
         const filterIntolerances = selectedDietaryPreferences.filter(function(item) {
             return !intoleranceOptions.includes(item);
         });
-        const diets = filterIntolerances.join(',');
-        return diets;
+        return filterIntolerances.join(',');
     }
+
     const diets = getDiets(selectedDietaryPreferences, intoleranceOptions);
 
     // adding user input values to URL string (used chatGPT to understand how to add these values to endpoint string
     const endpoint = `https://api.spoonacular.com/recipes/complexSearch?apiKey=582a62bc2bef47c9a0e3aededb18d8bc&&diet=${diets}&intolerances=${intolerances}`; // question mark at end of endpoint url (https://api.spoonacular.com/recipes/complexSearch) indicates that parameters are starting
 
-    const mealPlan = document.getElementById('mealPlan');
     mealPlan.innerHTML = `<h1>My Meal Plan:</h1>`;
 
     async function findPreferences() {
@@ -49,22 +71,10 @@ userPreferences.addEventListener('submit', function(event) {
         console.log((recipesArray.length) + ' recipes found:');
         console.log(recipesArray);
 
-        function randomize(arr) {
-            for (let i = arr.length -1; i > 0; i--) {
-                let randomIndex = Math.floor(Math.random() * (i+1));
-                let currentElement = arr[i];
-                arr[i] = arr[randomIndex];
-                arr[randomIndex] = currentElement;
-            }
-        }
-
         randomize(recipesArray);
 
-        const breakfastTitle = document.getElementById('breakfastTitle');
         breakfastTitle.innerHTML = `<h3>Breakfast</h3>`;
-        const breakfastContainer = document.getElementById('breakfast');
         breakfastContainer.innerHTML = '';
-        const breakfast = document.getElementById('breakfast');
         breakfast.classList.add('meal-container');
         breakfast.classList.add('container-bg');
         let a = 0
@@ -87,11 +97,8 @@ userPreferences.addEventListener('submit', function(event) {
             }
         }
 
-        const lunchTitle = document.getElementById('lunchTitle');
         lunchTitle.innerHTML = `<h3>Lunch</h3>`;
-        const lunchContainer = document.getElementById('lunch');
         lunchContainer.innerHTML = '';
-        const lunch = document.getElementById('lunch');
         lunch.classList.add('meal-container');
         lunch.classList.add('container-bg');
         let b = 0
@@ -114,11 +121,8 @@ userPreferences.addEventListener('submit', function(event) {
             }
         }
 
-        const snackTitle = document.getElementById('snackTitle');
         snackTitle.innerHTML = `<h3>Snacks</h3>`;
-        const snackContainer = document.getElementById('snack');
         snackContainer.innerHTML = '';
-        const snack = document.getElementById('snack');
         snack.classList.add('meal-container');
         snack.classList.add('container-bg');
         let c = 0
@@ -141,11 +145,8 @@ userPreferences.addEventListener('submit', function(event) {
             }
         }
 
-        const dinnerTitle = document.getElementById('dinnerTitle');
         dinnerTitle.innerHTML = `<h3>Dinner</h3>`;
-        const dinnerContainer = document.getElementById('dinner');
         dinnerContainer.innerHTML = '';
-        const dinner = document.getElementById('dinner');
         dinner.classList.add('meal-container');
         dinner.classList.add('container-bg');
         randomize(recipesArray)

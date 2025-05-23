@@ -40,6 +40,12 @@ button,
     cursor: pointer;
 }
 
+img {
+    max-width: 20%;
+    height: auto;
+    border-radius: 10px;
+}
+
 /* font styles */
 
 h1, h3, p {
@@ -64,6 +70,9 @@ p {
 
 .body-text {
     font-size: 0.9rem;
+}
+
+.meal-title { /*might use this later to style*/
 }
 
 /* containers */
@@ -108,7 +117,8 @@ p {
 .meal-item {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-items: left;
+    align-items: center;
     gap: 0.75rem;
 }
 

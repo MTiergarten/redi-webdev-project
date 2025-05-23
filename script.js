@@ -88,16 +88,18 @@ userPreferences.addEventListener('submit', function(event) {
 
         let a = 0
         while (a <= 1) {
-            if (breakfastArray.length >=2) {
+            if (breakfastArray.length >=1) {
+                const breakfastWrapper = document.createElement('div');
+                breakfastWrapper.classList.add('meal-item');
+                const breakfastImg = document.createElement('img');
+                breakfastImg.src = breakfastArray[a].image;
                 const breakfastRecipes = document.createElement('li');
                 breakfastRecipes.textContent = breakfastArray[a].title;
-                document.getElementById('breakfast').appendChild(breakfastRecipes);
+                breakfastRecipes.classList.add('meal-title');
+                breakfastWrapper.appendChild(breakfastImg);
+                breakfastWrapper.appendChild(breakfastRecipes);
+                document.getElementById('breakfast').appendChild(breakfastWrapper);
                 a++
-            } else if (breakfastArray.length === 1) {
-                const breakfastRecipes = document.createElement('li');
-                breakfastRecipes.textContent = breakfastArray[a].title;
-                document.getElementById('breakfast').appendChild(breakfastRecipes);
-                break
             } else {
                 const breakfastRecipes = document.createElement('li');
                 breakfastRecipes.textContent = 'Couldn\'t find recipes';
@@ -116,16 +118,18 @@ userPreferences.addEventListener('submit', function(event) {
         lunch.classList.add('container-bg');
         let b = 0
         while (b <= 1) {
-            if (lunchArray.length >= 2) {
+            if (lunchArray.length >= 1) {
+                const lunchWrapper = document.createElement('div');
+                lunchWrapper.classList.add('meal-item');
+                const lunchImg = document.createElement('img');
+                lunchImg.src = lunchArray[b].image;
                 const lunchRecipes = document.createElement('li');
                 lunchRecipes.textContent = lunchArray[b].title;
-                document.getElementById('lunch').appendChild(lunchRecipes);
+                lunchRecipes.classList.add('meal-title');
+                lunchWrapper.appendChild(lunchImg);
+                lunchWrapper.appendChild(lunchRecipes);
+                document.getElementById('lunch').appendChild(lunchWrapper);
                 b++
-            } else if (lunchArray.length === 1) {
-                const lunchRecipes = document.createElement('li');
-                lunchRecipes.textContent = lunchArray[b].title;
-                document.getElementById('lunch').appendChild(lunchRecipes);
-                break
             } else {
                 const lunchRecipes = document.createElement('li');
                 lunchRecipes.textContent = 'Couldn\'t find recipes';
@@ -144,16 +148,18 @@ userPreferences.addEventListener('submit', function(event) {
         snack.classList.add('container-bg');
         let c = 0
         while (c <= 1) {
-            if (snackArray.length >= 2) {
+            if (snackArray.length >= 1) {
+                const snackWrapper = document.createElement('div');
+                snackWrapper.classList.add('meal-item');
+                const snackImg = document.createElement('img');
+                snackImg.src = snackArray[c].image;
                 const snackRecipes = document.createElement('li');
                 snackRecipes.textContent = snackArray[c].title;
-                document.getElementById('snack').appendChild(snackRecipes);
+                snackRecipes.classList.add('meal-title');
+                snackWrapper.appendChild(snackImg);
+                snackWrapper.appendChild(snackRecipes);
+                document.getElementById('snack').appendChild(snackWrapper);
                 c++
-            } else if (snackArray.length === 1) {
-                const snackRecipes = document.createElement('li');
-                snackRecipes.textContent = snackArray[c].title;
-                document.getElementById('snack').appendChild(snackRecipes);
-                break
             } else {
                 const snackRecipes = document.createElement('li');
                 snackRecipes.textContent = 'Couldn\'t find recipes';
@@ -176,15 +182,17 @@ userPreferences.addEventListener('submit', function(event) {
         let d = 0
         while (d <= 1) {
             if (dinnerArray.length >= 2) {
+                const dinnerWrapper = document.createElement('div');
+                dinnerWrapper.classList.add('meal-item');
+                const dinnerImg = document.createElement('img');
+                dinnerImg.src = dinnerArray[d].image;
                 const dinnerRecipes = document.createElement('li');
                 dinnerRecipes.textContent = dinnerArray[d].title;
-                document.getElementById('dinner').appendChild(dinnerRecipes);
+                dinnerRecipes.classList.add('meal-title');
+                dinnerWrapper.appendChild(dinnerImg);
+                dinnerWrapper.appendChild(dinnerRecipes);
+                document.getElementById('dinner').appendChild(dinnerWrapper);
                 d++
-            } else if (dinnerArray.length === 1) {
-                const dinnerRecipes = document.createElement('li');
-                dinnerRecipes.textContent = dinnerArray[d].title;
-                document.getElementById('dinner').appendChild(dinnerRecipes);
-                break
             } else {
                 const dinnerRecipes = document.createElement('li');
                 dinnerRecipes.textContent = 'Couldn\'t find recipes';

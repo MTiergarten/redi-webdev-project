@@ -60,7 +60,8 @@ userPreferences.addEventListener('submit', function(event) {
     const diets = getDiets(selectedDietaryPreferences, intoleranceOptions);
 
     // adding user input values to URL string (used chatGPT to understand how to add these values to endpoint string
-    const endpoint = `https://api.spoonacular.com/recipes/complexSearch?apiKey=582a62bc2bef47c9a0e3aededb18d8bc&&diet=${diets}&intolerances=${intolerances}`; // question mark at end of endpoint url (https://api.spoonacular.com/recipes/complexSearch) indicates that parameters are starting
+    // added properties: number=100 (default was 10 - too low to get 2 ideas for each of the 4 types AND addRecipeInformation=true , so that I could filter the results by dishTypes (this property isn't included in the default results)
+    const endpoint = `https://api.spoonacular.com/recipes/complexSearch?apiKey=582a62bc2bef47c9a0e3aededb18d8bc&number=100&addRecipeInformation=true&diet=${diets}&intolerances=${intolerances}`; // question mark at end of endpoint url (https://api.spoonacular.com/recipes/complexSearch) indicates that parameters are starting
 
     async function findPreferences(){
         const fetchResponse = await fetch(endpoint); //sending request to API. Fetch returns a response object, not actual data yet
@@ -80,16 +81,21 @@ userPreferences.addEventListener('submit', function(event) {
         breakfastContainer.innerHTML = '';
         breakfast.classList.add('meal-container');
         breakfast.classList.add('container-bg');
+
+        const breakfastArray = recipesArray.filter(function(item) {
+            return item.dishTypes.includes('breakfast');
+        })
+
         let a = 0
         while (a <= 1) {
-            if (recipesArray.length >=2) {
+            if (breakfastArray.length >=2) {
                 const breakfastRecipes = document.createElement('li');
-                breakfastRecipes.textContent = recipesArray[a].title;
+                breakfastRecipes.textContent = breakfastArray[a].title;
                 document.getElementById('breakfast').appendChild(breakfastRecipes);
                 a++
-            } else if (recipesArray.length === 1) {
+            } else if (breakfastArray.length === 1) {
                 const breakfastRecipes = document.createElement('li');
-                breakfastRecipes.textContent = recipesArray[a].title;
+                breakfastRecipes.textContent = breakfastArray[a].title;
                 document.getElementById('breakfast').appendChild(breakfastRecipes);
                 break
             } else {
@@ -100,20 +106,24 @@ userPreferences.addEventListener('submit', function(event) {
             }
         }
 
+        const lunchArray = recipesArray.filter(function(item) {
+            return item.dishTypes.includes('lunch');
+        })
+
         lunchTitle.innerHTML = `<h3>Lunch</h3>`;
         lunchContainer.innerHTML = '';
         lunch.classList.add('meal-container');
         lunch.classList.add('container-bg');
         let b = 0
         while (b <= 1) {
-            if (recipesArray.length >= 2) {
+            if (lunchArray.length >= 2) {
                 const lunchRecipes = document.createElement('li');
-                lunchRecipes.textContent = recipesArray[b].title;
+                lunchRecipes.textContent = lunchArray[b].title;
                 document.getElementById('lunch').appendChild(lunchRecipes);
                 b++
-            } else if (recipesArray.length === 1) {
+            } else if (lunchArray.length === 1) {
                 const lunchRecipes = document.createElement('li');
-                lunchRecipes.textContent = recipesArray[b].title;
+                lunchRecipes.textContent = lunchArray[b].title;
                 document.getElementById('lunch').appendChild(lunchRecipes);
                 break
             } else {
@@ -124,20 +134,24 @@ userPreferences.addEventListener('submit', function(event) {
             }
         }
 
+        const snackArray = recipesArray.filter(function(item) {
+            return item.dishTypes.includes('snack');
+        })
+
         snackTitle.innerHTML = `<h3>Snacks</h3>`;
         snackContainer.innerHTML = '';
         snack.classList.add('meal-container');
         snack.classList.add('container-bg');
         let c = 0
         while (c <= 1) {
-            if (recipesArray.length >= 2) {
+            if (snackArray.length >= 2) {
                 const snackRecipes = document.createElement('li');
-                snackRecipes.textContent = recipesArray[c].title;
+                snackRecipes.textContent = snackArray[c].title;
                 document.getElementById('snack').appendChild(snackRecipes);
                 c++
-            } else if (recipesArray.length === 1) {
+            } else if (snackArray.length === 1) {
                 const snackRecipes = document.createElement('li');
-                snackRecipes.textContent = recipesArray[c].title;
+                snackRecipes.textContent = snackArray[c].title;
                 document.getElementById('snack').appendChild(snackRecipes);
                 break
             } else {
@@ -148,21 +162,27 @@ userPreferences.addEventListener('submit', function(event) {
             }
         }
 
+        const dinnerArray = recipesArray.filter(function(item) {
+            return item.dishTypes.includes('dinner');
+        })
+
+        randomize(dinnerArray);
+
         dinnerTitle.innerHTML = `<h3>Dinner</h3>`;
         dinnerContainer.innerHTML = '';
         dinner.classList.add('meal-container');
         dinner.classList.add('container-bg');
-        randomize(recipesArray)
+
         let d = 0
         while (d <= 1) {
-            if (recipesArray.length >= 2) {
+            if (dinnerArray.length >= 2) {
                 const dinnerRecipes = document.createElement('li');
-                dinnerRecipes.textContent = recipesArray[d].title;
+                dinnerRecipes.textContent = dinnerArray[d].title;
                 document.getElementById('dinner').appendChild(dinnerRecipes);
                 d++
-            } else if (recipesArray.length === 1) {
+            } else if (dinnerArray.length === 1) {
                 const dinnerRecipes = document.createElement('li');
-                dinnerRecipes.textContent = recipesArray[d].title;
+                dinnerRecipes.textContent = dinnerArray[d].title;
                 document.getElementById('dinner').appendChild(dinnerRecipes);
                 break
             } else {

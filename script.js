@@ -62,16 +62,19 @@ userPreferences.addEventListener('submit', function(event) {
     // adding user input values to URL string (used chatGPT to understand how to add these values to endpoint string
     const endpoint = `https://api.spoonacular.com/recipes/complexSearch?apiKey=582a62bc2bef47c9a0e3aededb18d8bc&&diet=${diets}&intolerances=${intolerances}`; // question mark at end of endpoint url (https://api.spoonacular.com/recipes/complexSearch) indicates that parameters are starting
 
-    mealPlan.innerHTML = `<h1>My Meal Plan:</h1>`;
-
-    async function findPreferences() {
+    async function findPreferences(){
         const fetchResponse = await fetch(endpoint); //sending request to API. Fetch returns a response object, not actual data yet
         const convertResponse = await fetchResponse.json(); //parsing this HTTP object into a usable JavaScript object
-        const recipesArray = convertResponse.results; //accessing the "results" field of the JS object, which is an array of objects that can now have array methods applied to it
-        console.log((recipesArray.length) + ' recipes found:');
-        console.log(recipesArray);
+        return convertResponse.results; //accessing the "results" field of the JS object, which is an array of objects that can now have array methods applied to it
+    }
 
+    // used chatGPT to understand how to properly run my async function - using then or await to consider the promise return "async function always returns a promise, and you must handle it like one"
+    // running the async function, where recipesArray is the value returned by findPreferences() and then manipulated inside the function
+    findPreferences().then(function(recipesArray){
+        console.log(recipesArray);
         randomize(recipesArray);
+
+        mealPlan.innerHTML = `<h1>My Meal Plan:</h1>`;
 
         breakfastTitle.innerHTML = `<h3>Breakfast</h3>`;
         breakfastContainer.innerHTML = '';
@@ -169,6 +172,5 @@ userPreferences.addEventListener('submit', function(event) {
                 break
             }
         }
-    }
-    findPreferences();
+    })
 });

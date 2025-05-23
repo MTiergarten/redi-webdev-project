@@ -3,15 +3,11 @@
 # Development Plan | _due 26/05_
 
 ## ☕ Phase 3 | _due 26/05_ (implement API + more detailed output)
-- [x] Integrate with external recipe API ([Spoonacular](https://spoonacular.com/food-api/docs))
-- [ ] Display photo for each recipe
-- [ ] Add accordion to display each recipe's details
-- [ ] Let user pick how many ideas they want per meal (counter 1 to 7)
-- [ ] Let use toggle meals on/off (eg only lunch and dinner)
-- [ ] Name the app
-- [ ] Nice to have: more personalization depending on what API offers (eg let user select preferred ingredient for a meal / let user define a meal plan structure selecting n meals/day, n days, n times they want to cook etc)
+- [x] ~~Integrate with external recipe API~~ ([Spoonacular](https://spoonacular.com/food-api/docs))
+- [x] ~~Display photo for each recipe~~
 - [ ] Let user regenerate individual recipes in the meal plan
-- [ ] "Finding recipes..." (1s delay with animated state on button?)
+- [ ] Add recipe details (accordion optional)
+- [ ] Name the app
 - [ ] Visual:
   - [ ] custom checkboxes
   - [ ] add min-width
@@ -44,6 +40,7 @@
 
 ## 💭 Wishlist of future improvements
 - Button to clear filter selection
+- Visual: "Finding recipes..." (short delay with animation)
 - Show calories and macros for each portion
 - Allow user to add their own recipes
 - Allow user to customize portion size (maybe according to calories / macro goals?)
@@ -55,6 +52,11 @@
 - Import plans/recipes from dietitians
 - Allow to filter by level of difficulty
 - Suggestions: a recipe you might like for the weekend
+- More personalization:
+  - Let user select preferred ingredient for a meal
+  - Let user define a meal plan structure selecting n meals/day, n days, n times they want to cook 
+  - Let user pick how many ideas they want per meal (counter 1 to 7)
+  - Let use toggle meals on/off (eg only lunch and dinner)
 
 
 ## Product Concept: Jobs to be Done

@@ -20,6 +20,7 @@ ul, ol {
     --primary: #303841;
     --accent: #0075FF;
     --accent-hover: rgba(0, 117, 255, 0.2);
+    --icon-bg: rgba(48, 56, 65, 0.5);
     --secondary: #C2B5AD;
 }
 
@@ -72,7 +73,8 @@ p {
     font-size: 0.9rem;
 }
 
-.meal-title { /*might use this later to style*/
+.meal-title {
+    width: 100%;
 }
 
 /* containers */
@@ -153,6 +155,21 @@ p {
 
 .button:hover, .button:active {
     background-color: var(--accent-hover);
+    transition: background-color 0.3s ease;
+}
+
+/* others */
+
+.icon {
+    padding: 0.2rem;
+    border: 1px solid var(--primary);
+    background-color: var(--icon-bg);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.icon:hover, .icon:active {
+    background-color: var(--primary);
     transition: background-color 0.3s ease;
 }
 

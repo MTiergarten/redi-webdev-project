@@ -9,8 +9,7 @@
 - [ ] Add recipe details (accordion optional)
 - [ ] Name the app
 - [ ] Visual:
-  - [ ] custom checkboxes
-  - [ ] add min-width
+  - [x] ~~custom checkboxes (tags with hover effect)~~
   - [ ] implement color palette / gradient BG
   - [ ] add emojis?
  

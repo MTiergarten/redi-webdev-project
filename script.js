@@ -60,8 +60,12 @@ userPreferences.addEventListener('submit', function(event) {
     const diets = getDiets(selectedDietaryPreferences, intoleranceOptions);
 
     // adding user input values to URL string (used chatGPT to understand how to add these values to endpoint string
-    // added properties: number=100 (default was 10 - too low to get 2 ideas for each of the 4 types AND addRecipeInformation=true , so that I could filter the results by dishTypes (this property isn't included in the default results)
-    const endpoint = `https://api.spoonacular.com/recipes/complexSearch?apiKey=582a62bc2bef47c9a0e3aededb18d8bc&number=100&addRecipeInformation=true&diet=${diets}&intolerances=${intolerances}`; // question mark at end of endpoint url (https://api.spoonacular.com/recipes/complexSearch) indicates that parameters are starting
+    // added properties: number=50 (default was 10 - too low to get 2 ideas for each of the 4 types AND addRecipeInformation=true , so that I could filter the results by dishTypes (this property isn't included in the default results)
+    // docs say that "addRecipeInstructions"=true gets analyzed instructions for each recipe returned, but not working.
+    // to add recipe ingredients and instructions, need to search by recipe ID in a different endpoint: https://api.spoonacular.com/recipes/{id}/analyzedInstructions
+    // workaround, use  sourceUrl or spoonacularSourceUrl to add a link to recipe
+
+    const endpoint = `https://api.spoonacular.com/recipes/complexSearch?apiKey=582a62bc2bef47c9a0e3aededb18d8bc&number=50&addRecipeInstructions&addRecipeInformation=true&diet=${diets}&intolerances=${intolerances}`; // question mark at end of endpoint url (https://api.spoonacular.com/recipes/complexSearch) indicates that parameters are starting
 
     async function findPreferences(){
         const fetchResponse = await fetch(endpoint); //sending request to API. Fetch returns a response object, not actual data yet
@@ -96,8 +100,14 @@ userPreferences.addEventListener('submit', function(event) {
                 const breakfastRecipes = document.createElement('li');
                 breakfastRecipes.textContent = breakfastArray[a].title;
                 breakfastRecipes.classList.add('meal-title');
+                // const shuffle = document.createElement('input');
+                // shuffle.id = 'shuffle'; how can I make each shuffle icon have its own ID, so that it randomizes only the respective recipe?
+                // shuffle.value = '🔀';
+                // shuffle.type = 'submit';
+                // shuffle.classList.add('icon');
                 breakfastWrapper.appendChild(breakfastImg);
                 breakfastWrapper.appendChild(breakfastRecipes);
+                // breakfastWrapper.appendChild(shuffle);
                 document.getElementById('breakfast').appendChild(breakfastWrapper);
                 a++
             } else {

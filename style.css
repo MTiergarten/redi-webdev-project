@@ -173,6 +173,30 @@ p {
     transition: background-color 0.3s ease;
 }
 
+/* custom checkbox */
+
+/* hide default checkbox */
+.custom-checkbox input {
+    display:none;
+}
+
+.custom-checkbox input:checked + label { /* input:checked + label targets the <label> that is immediately after a checked <input> */
+    background-color: var(--primary);
+}
+
+.custom-checkbox label {
+    color: var(--primary-bg);
+    background-color: var(--accent);
+    border-radius: 5px;
+    padding: 0.4rem 1rem;
+    width: 7rem;
+}
+
+.custom-checkbox label:hover {
+    background-color: var(--primary);
+    transition: background-color 0.3s ease;
+}
+
 /* responsive layout tablet, breakpoint 768px (smaller tablets will look better with grid layout from mobile) */
 
 @media only screen and (min-width: 768px) {

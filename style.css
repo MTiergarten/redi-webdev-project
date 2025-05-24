@@ -194,7 +194,12 @@ p {
 
 .custom-checkbox label:hover {
     background-color: var(--primary);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
+}
+
+.custom-checkbox label:active, .custom-checkbox input:checked + label:active {
+    background-color: var(--accent-hover);
+    transition: background-color 0.2s ease;
 }
 
 /* responsive layout tablet, breakpoint 768px (smaller tablets will look better with grid layout from mobile) */

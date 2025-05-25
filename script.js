@@ -146,7 +146,7 @@ userPreferences.addEventListener('submit', function(event) {
                 lunchRecipes.classList.add('meal-title');
                 const lunchLink = document.createElement('a');
                 lunchLink.target = '_blank';
-                lunchLink.href = lunchArray[a].spoonacularSourceUrl;
+                lunchLink.href = lunchArray[b].spoonacularSourceUrl;
                 const linkIcon = document.createElement('span');
                 linkIcon.classList.add('material-symbols-outlined','icon');
                 linkIcon.textContent = 'open_in_new';
@@ -184,7 +184,7 @@ userPreferences.addEventListener('submit', function(event) {
                 snackRecipes.classList.add('meal-title');
                 const snackLink = document.createElement('a');
                 snackLink.target = '_blank';
-                snackLink.href = snackArray[a].spoonacularSourceUrl;
+                snackLink.href = snackArray[c].spoonacularSourceUrl;
                 const linkIcon = document.createElement('span');
                 linkIcon.classList.add('material-symbols-outlined','icon');
                 linkIcon.textContent = 'open_in_new';
@@ -225,7 +225,7 @@ userPreferences.addEventListener('submit', function(event) {
                 dinnerRecipes.classList.add('meal-title');
                 const dinnerLink = document.createElement('a');
                 dinnerLink.target = '_blank';
-                dinnerLink.href = dinnerArray[a].spoonacularSourceUrl;
+                dinnerLink.href = dinnerArray[d].spoonacularSourceUrl;
                 const linkIcon = document.createElement('span');
                 linkIcon.classList.add('material-symbols-outlined','icon');
                 linkIcon.textContent = 'open_in_new';

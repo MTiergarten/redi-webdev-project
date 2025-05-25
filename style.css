@@ -45,7 +45,7 @@ img {
     border-radius: 2px;
 }
 
-/* font styles */
+/* font and styles */
 
 h1, h3, p {
     margin: 0;
@@ -219,6 +219,11 @@ p {
 /* responsive layout tablet, breakpoint 768px (smaller tablets will look better with grid layout from mobile) */
 
 @media only screen and (min-width: 768px) {
+
+    .content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 
     .body-text {
         font-size: 0.9rem;

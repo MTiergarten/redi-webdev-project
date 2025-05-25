@@ -5,7 +5,7 @@
 ## ☕ Phase 3 | _due 26/05_ (implement API + more detailed output)
 - [x] ~~Integrate with external recipe API~~ ([Spoonacular](https://spoonacular.com/food-api/docs))
 - [x] ~~Display photo for each recipe~~
-- [ ] Add recipe details (accordion optional)
+- [x] ~~Add recipe details (workaround: link to recipe instead of fetching details)~~
 - [x] ~~Visual:~~
   - [x] ~~custom checkboxes (tags with hover effect)~~
   - [x] ~~implement visual design (monochromatic, monospace font)~~

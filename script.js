@@ -65,7 +65,7 @@ userPreferences.addEventListener('submit', function(event) {
     // to add recipe ingredients and instructions, need to search by recipe ID in a different endpoint: https://api.spoonacular.com/recipes/{id}/analyzedInstructions
     // workaround, use  sourceUrl or spoonacularSourceUrl to add a link to recipe
 
-    const endpoint = `https://api.spoonacular.com/recipes/complexSearch?apiKey=582a62bc2bef47c9a0e3aededb18d8bc&number=50&addRecipeInstructions&addRecipeInformation=true&diet=${diets}&intolerances=${intolerances}`; // question mark at end of endpoint url (https://api.spoonacular.com/recipes/complexSearch) indicates that parameters are starting
+    const endpoint = `https://api.spoonacular.com/recipes/complexSearch?apiKey=582a62bc2bef47c9a0e3aededb18d8bc&number=50&addRecipeInformation=true&diet=${diets}&intolerances=${intolerances}`; // question mark at end of endpoint url (https://api.spoonacular.com/recipes/complexSearch) indicates that parameters are starting
 
     async function findPreferences(){
         const fetchResponse = await fetch(endpoint); //sending request to API. Fetch returns a response object, not actual data yet
@@ -100,6 +100,13 @@ userPreferences.addEventListener('submit', function(event) {
                 const breakfastRecipes = document.createElement('li');
                 breakfastRecipes.textContent = breakfastArray[a].title;
                 breakfastRecipes.classList.add('meal-title');
+                const breakfastLink = document.createElement('a');
+                breakfastLink.target = '_blank';
+                breakfastLink.href = breakfastArray[a].spoonacularSourceUrl;
+                const linkIcon = document.createElement('span');
+                linkIcon.classList.add('material-symbols-outlined','icon');
+                linkIcon.textContent = 'open_in_new';
+                breakfastLink.appendChild(linkIcon);
                 // const shuffle = document.createElement('input');
                 // shuffle.id = 'shuffle'; how can I make each shuffle icon have its own ID, so that it randomizes only the respective recipe?
                 // shuffle.value = '🔀';
@@ -107,6 +114,7 @@ userPreferences.addEventListener('submit', function(event) {
                 // shuffle.classList.add('icon');
                 breakfastWrapper.appendChild(breakfastImg);
                 breakfastWrapper.appendChild(breakfastRecipes);
+                breakfastWrapper.appendChild(breakfastLink);
                 // breakfastWrapper.appendChild(shuffle);
                 document.getElementById('breakfast').appendChild(breakfastWrapper);
                 a++
@@ -136,8 +144,16 @@ userPreferences.addEventListener('submit', function(event) {
                 const lunchRecipes = document.createElement('li');
                 lunchRecipes.textContent = lunchArray[b].title;
                 lunchRecipes.classList.add('meal-title');
+                const lunchLink = document.createElement('a');
+                lunchLink.target = '_blank';
+                lunchLink.href = lunchArray[a].spoonacularSourceUrl;
+                const linkIcon = document.createElement('span');
+                linkIcon.classList.add('material-symbols-outlined','icon');
+                linkIcon.textContent = 'open_in_new';
+                lunchLink.appendChild(linkIcon);
                 lunchWrapper.appendChild(lunchImg);
                 lunchWrapper.appendChild(lunchRecipes);
+                lunchWrapper.appendChild(lunchLink);
                 document.getElementById('lunch').appendChild(lunchWrapper);
                 b++
             } else {
@@ -166,8 +182,16 @@ userPreferences.addEventListener('submit', function(event) {
                 const snackRecipes = document.createElement('li');
                 snackRecipes.textContent = snackArray[c].title;
                 snackRecipes.classList.add('meal-title');
+                const snackLink = document.createElement('a');
+                snackLink.target = '_blank';
+                snackLink.href = snackArray[a].spoonacularSourceUrl;
+                const linkIcon = document.createElement('span');
+                linkIcon.classList.add('material-symbols-outlined','icon');
+                linkIcon.textContent = 'open_in_new';
+                snackLink.appendChild(linkIcon);
                 snackWrapper.appendChild(snackImg);
                 snackWrapper.appendChild(snackRecipes);
+                snackWrapper.appendChild(snackLink);
                 document.getElementById('snack').appendChild(snackWrapper);
                 c++
             } else {
@@ -199,8 +223,16 @@ userPreferences.addEventListener('submit', function(event) {
                 const dinnerRecipes = document.createElement('li');
                 dinnerRecipes.textContent = dinnerArray[d].title;
                 dinnerRecipes.classList.add('meal-title');
+                const dinnerLink = document.createElement('a');
+                dinnerLink.target = '_blank';
+                dinnerLink.href = dinnerArray[a].spoonacularSourceUrl;
+                const linkIcon = document.createElement('span');
+                linkIcon.classList.add('material-symbols-outlined','icon');
+                linkIcon.textContent = 'open_in_new';
+                dinnerLink.appendChild(linkIcon);
                 dinnerWrapper.appendChild(dinnerImg);
                 dinnerWrapper.appendChild(dinnerRecipes);
+                dinnerWrapper.appendChild(dinnerLink);
                 document.getElementById('dinner').appendChild(dinnerWrapper);
                 d++
             } else {

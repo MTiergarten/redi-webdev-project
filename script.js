@@ -79,9 +79,9 @@ userPreferences.addEventListener('submit', function(event) {
         console.log(recipesArray);
         randomize(recipesArray);
 
-        mealPlan.innerHTML = `<h1>My Meal Plan:</h1>`;
+        mealPlan.innerHTML = `<h1 class="meal-plan">📝 My Meal Plan:</h1>`;
 
-        breakfastTitle.innerHTML = `<h3>Breakfast</h3>`;
+        breakfastTitle.innerHTML = `<h3>🧇 Breakfast</h3>`;
         breakfastContainer.innerHTML = '';
         breakfast.classList.add('meal-container');
         breakfast.classList.add('container-bg');
@@ -122,7 +122,7 @@ userPreferences.addEventListener('submit', function(event) {
             return item.dishTypes.includes('lunch');
         })
 
-        lunchTitle.innerHTML = `<h3>Lunch</h3>`;
+        lunchTitle.innerHTML = `<h3>🥘 Lunch</h3>`;
         lunchContainer.innerHTML = '';
         lunch.classList.add('meal-container');
         lunch.classList.add('container-bg');
@@ -152,7 +152,7 @@ userPreferences.addEventListener('submit', function(event) {
             return item.dishTypes.includes('snack');
         })
 
-        snackTitle.innerHTML = `<h3>Snacks</h3>`;
+        snackTitle.innerHTML = `<h3>🍎 Snacks</h3>`;
         snackContainer.innerHTML = '';
         snack.classList.add('meal-container');
         snack.classList.add('container-bg');
@@ -184,7 +184,7 @@ userPreferences.addEventListener('submit', function(event) {
 
         randomize(dinnerArray);
 
-        dinnerTitle.innerHTML = `<h3>Dinner</h3>`;
+        dinnerTitle.innerHTML = `<h3>🌯 Dinner</h3>`;
         dinnerContainer.innerHTML = '';
         dinner.classList.add('meal-container');
         dinner.classList.add('container-bg');

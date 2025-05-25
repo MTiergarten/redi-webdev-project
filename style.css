@@ -1,9 +1,8 @@
 /* reset CSS */
-
 * {
     box-sizing: border-box;
     border: none;
-    font-family: Inter, sans-serif;
+    font-family: "Space Mono", monospace;
 }
 
 ul, ol {
@@ -14,14 +13,11 @@ ul, ol {
 
 /* variables */
 
-:root {
+html {
     --primary-bg: #FFFFFF;
-    --secondary-bg: #EEEEEE;
-    --primary: #303841;
-    --accent: #0075FF;
-    --accent-hover: rgba(0, 117, 255, 0.2);
-    --icon-bg: rgba(48, 56, 65, 0.5);
-    --secondary: #C2B5AD;
+    --secondary-bg: rgb(242, 242, 242);
+    --primary: #262626;
+    --secondary: rgba(230, 230, 230, 0.2);
 }
 
 /* universal styles */
@@ -42,9 +38,10 @@ button,
 }
 
 img {
-    max-width: 20%;
+    max-width: 15%;
     height: auto;
-    border-radius: 10px;
+    border: 1px solid var(--primary);
+    border-radius: 2px;
 }
 
 /* font styles */
@@ -63,6 +60,7 @@ h1 {
 h3 {
     font-size: 1rem;
     font-weight: 700;
+    padding-left: 0.2rem;
 }
 
 p {
@@ -70,11 +68,17 @@ p {
 }
 
 .body-text {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .meal-title {
     width: 100%;
+}
+
+.meal-plan {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--secondary-bg);
 }
 
 /* containers */
@@ -88,12 +92,8 @@ p {
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
     background: var(--primary-bg);
-    box-shadow: 0 1px 5px 0 rgb(48, 56, 65, 0.2);
-}
-
-.content {
-    margin-left: 1rem;
-    margin-right: 1rem;
+    border-bottom: 1px solid var(--secondary-bg);
+    box-shadow: 0 1px 5px 0 var(--secondary);
 }
 
 .input-description {
@@ -106,14 +106,15 @@ p {
 .input-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, auto);
-    gap: 1rem;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 1rem;
+    column-gap: 0.5rem;
 }
 
 .container-bg {
-    padding: 0.8rem;
+    padding: 1rem;
     background-color: var(--secondary-bg);
-    border-radius: 10px;
+    border-radius: 2px;
 }
 
 .meal-item {
@@ -143,68 +144,63 @@ p {
 
 .button {
     margin: 1rem 0 2rem 0;
-    padding: 1rem;
+    padding: 0.8rem;
     width: 100%;
-    border: var(--accent) 1px solid;
-    border-radius: 10px;
-    color: var(--accent);
+    border: var(--primary) 1px solid;
+    border-radius: 2px;
+    color: var(--primary);
     background-color: var(--primary-bg);
     font-weight: bold;
     font-size: 1rem;
 }
 
-.button:hover, .button:active {
-    background-color: var(--accent-hover);
-    transition: background-color 0.3s ease;
-}
-
-/* others */
-
-.icon {
-    padding: 0.2rem;
-    border: 1px solid var(--primary);
-    background-color: var(--icon-bg);
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.icon:hover, .icon:active {
+.button:hover {
+    color: var(--primary-bg);
     background-color: var(--primary);
     transition: background-color 0.3s ease;
+    box-shadow: 0 0 3px 3px var(--secondary);
 }
 
 /* custom checkbox */
 
 /* hide default checkbox */
+
+
 .custom-checkbox input {
     display:none;
 }
 
-.custom-checkbox input:checked + label { /* input:checked + label targets the <label> that is immediately after a checked <input> */
-    background-color: var(--primary);
-}
-
 .custom-checkbox label {
-    color: var(--primary-bg);
-    background-color: var(--accent);
-    border-radius: 5px;
-    padding: 0.4rem 1rem;
-    width: 7rem;
+    display: block;
+    justify-content: stretch;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    border-radius: 2px;
+    padding: 0.4rem 0.4rem;
+    width: 100%;
 }
 
 .custom-checkbox label:hover {
     background-color: var(--primary);
+    color: var(--primary-bg);
+    box-shadow: 0 0 3px 3px var(--secondary);
     transition: background-color 0.5s ease;
 }
 
-.custom-checkbox label:active, .custom-checkbox input:checked + label:active {
-    background-color: var(--accent-hover);
-    transition: background-color 0.2s ease;
+
+.custom-checkbox input:checked + label { /* input:checked + label targets the <label> that is immediately after a checked <input> */
+    background-color: var(--primary);
+    color: var(--primary-bg);
 }
+
 
 /* responsive layout tablet, breakpoint 768px (smaller tablets will look better with grid layout from mobile) */
 
 @media only screen and (min-width: 768px) {
+
+    .body-text {
+        font-size: 0.9rem;
+    }
 
     .input-container {
         display: flex;
@@ -230,7 +226,7 @@ p {
 /* responsive layout - desktop */
 
 @media only screen and (min-width: 992px) {
-    .content {
+      .content {
         display: flex;
         flex-direction: row;
     }

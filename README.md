@@ -5,13 +5,11 @@
 ## ☕ Phase 3 | _due 26/05_ (implement API + more detailed output)
 - [x] ~~Integrate with external recipe API~~ ([Spoonacular](https://spoonacular.com/food-api/docs))
 - [x] ~~Display photo for each recipe~~
-- [ ] Let user regenerate individual recipes in the meal plan
 - [ ] Add recipe details (accordion optional)
-- [ ] Name the app
-- [ ] Visual:
+- [x] ~~Visual:~~
   - [x] ~~custom checkboxes (tags with hover effect)~~
-  - [ ] implement color palette / gradient BG
-  - [ ] add emojis?
+  - [x] ~~implement visual design (monochromatic, monospace font)~~
+  - [x] ~~add emojis~~
  
 ## ✅ Phase 2 | _due 20/05_ (design)
 - Implement basic responsive design
@@ -38,6 +36,7 @@
   - [x] ~~To do: return plan with randomized recipes to yield enough meals for a week~~
 
 ## 💭 Wishlist of future improvements
+- Let user regenerate individual recipes in the meal plan
 - Button to clear filter selection
 - Visual: "Finding recipes..." (short delay with animation)
 - Show calories and macros for each portion

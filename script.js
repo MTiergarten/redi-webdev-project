@@ -1,3 +1,4 @@
+//get user input elements:
 const userPreferences = document.getElementById('userPreferences');
 const checkDietaryPreferences = userPreferences.querySelectorAll('input[type="checkbox"]');
 //used chatGPT to understand the difference between elements that can / can't be iterable in a DOM manipulation - and how to create a variable to target all the checkboxes in my form to run in a loop
@@ -21,6 +22,7 @@ const dinnerTitle = document.getElementById('dinnerTitle');
 const dinnerContainer = document.getElementById('dinner');
 const dinner = document.getElementById('dinner');
 
+//function to randomize recipe array
 function randomize(arr) {
     for (let i = arr.length -1; i > 0; i--) {
         let randomIndex = Math.floor(Math.random() * (i+1));
@@ -30,6 +32,7 @@ function randomize(arr) {
     }
 }
 
+//event listener - submit form
 userPreferences.addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -59,18 +62,17 @@ userPreferences.addEventListener('submit', function(event) {
 
     const diets = getDiets(selectedDietaryPreferences, intoleranceOptions);
 
-    // adding user input values to URL string (used chatGPT to understand how to add these values to endpoint string
-    // added properties: number=50 (default was 10 - too low to get 2 ideas for each of the 4 types AND addRecipeInformation=true , so that I could filter the results by dishTypes (this property isn't included in the default results)
-    // docs say that "addRecipeInstructions"=true gets analyzed instructions for each recipe returned, but not working.
-    // to add recipe ingredients and instructions, need to search by recipe ID in a different endpoint: https://api.spoonacular.com/recipes/{id}/analyzedInstructions
-    // workaround, use  sourceUrl or spoonacularSourceUrl to add a link to recipe
-
+    // endpoint includes:
+    // number=50 - default was 10, too low to get the needed output after manipulating the array of recipes found (2 ideas for each of the 4 meal types)
+    // addRecipeInformation=true , so that I could filter the results by dishTypes and retrieve a recipe source link (this property isn't included in the default results)
+    // user input for diet and intolerances: adding user input values to URL string (used chatGPT to understand how to add these values to endpoint URL string)
     const endpoint = `https://api.spoonacular.com/recipes/complexSearch?apiKey=582a62bc2bef47c9a0e3aededb18d8bc&number=50&addRecipeInformation=true&diet=${diets}&intolerances=${intolerances}`; // question mark at end of endpoint url (https://api.spoonacular.com/recipes/complexSearch) indicates that parameters are starting
 
+    // function to get user preferences, request to API and return results, organized by meal type
     async function findPreferences(){
         const fetchResponse = await fetch(endpoint); //sending request to API. Fetch returns a response object, not actual data yet
         const convertResponse = await fetchResponse.json(); //parsing this HTTP object into a usable JavaScript object
-        return convertResponse.results; //accessing the "results" field of the JS object, which is an array of objects that can now have array methods applied to it
+        return convertResponse.results; //accessing the "results" property of the JS object, which is an array of objects that can now have array methods applied to it
     }
 
     // used chatGPT to understand how to properly run my async function - using then or await to consider the promise return "async function always returns a promise, and you must handle it like one"
@@ -86,10 +88,13 @@ userPreferences.addEventListener('submit', function(event) {
         breakfast.classList.add('meal-container');
         breakfast.classList.add('container-bg');
 
+        // filtering the recipesArray by meal type to display the correct option in each section
         const breakfastArray = recipesArray.filter(function(item) {
             return item.dishTypes.includes('breakfast');
         })
 
+        // loop to return up to 2 recipes for each meal type, and display a message if it doesn't find any
+        // creating a div that contains the image recipe, recipe title and an external link for recipe details
         let a = 0
         while (a <= 1) {
             if (breakfastArray.length >=1) {
@@ -107,11 +112,6 @@ userPreferences.addEventListener('submit', function(event) {
                 linkIcon.classList.add('material-symbols-outlined','icon');
                 linkIcon.textContent = 'open_in_new';
                 breakfastLink.appendChild(linkIcon);
-                // const shuffle = document.createElement('input');
-                // shuffle.id = 'shuffle'; how can I make each shuffle icon have its own ID, so that it randomizes only the respective recipe?
-                // shuffle.value = '🔀';
-                // shuffle.type = 'submit';
-                // shuffle.classList.add('icon');
                 breakfastWrapper.appendChild(breakfastImg);
                 breakfastWrapper.appendChild(breakfastRecipes);
                 breakfastWrapper.appendChild(breakfastLink);
@@ -244,3 +244,19 @@ userPreferences.addEventListener('submit', function(event) {
         }
     })
 });
+
+// Missing features:
+//
+// Fetch and display recipe details
+// API docs say that "addRecipeInstructions"=true returns ingredients and instructions for each recipe returned, but this is not working
+// To add recipe ingredients and instructions, I would need to search by recipe ID in a different endpoint: https://api.spoonacular.com/recipes/{id}/analyzedInstructions
+// Workaround: for now, use  sourceUrl or spoonacularSourceUrl to add a link to recipe
+//
+// Let user randomize a returned recipe individually, to customize the plan
+// I didn't know how I could make each shuffle icon have its own ID, so that it randomizes only the respective recipe
+// Draft:
+// const shuffle = document.createElement('input');
+// shuffle.id = 'shuffle';
+// shuffle.value = '🔀';
+// shuffle.type = 'submit';
+// shuffle.classList.add('icon');

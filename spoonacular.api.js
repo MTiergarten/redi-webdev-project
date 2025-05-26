@@ -1,3 +1,6 @@
+// Document to run some tests with the API
+
+
 // // Spoonacular Doc: https://spoonacular.com/food-api/docs
 //
 // const apiKey = '582a62bc2bef47c9a0e3aededb18d8bc';
@@ -39,7 +42,7 @@
 // // sweet or savory breakfast https://spoonacular.com/food-api/docs#Taste-by-ID
 // // filter by ingredient https://spoonacular.com/food-api/docs#Detect-Food-in-Text / https://spoonacular.com/food-api/docs#Ingredient-Search
 
-const endpoint = `https://api.spoonacular.com/recipes/complexSearch?apiKey=582a62bc2bef47c9a0e3aededb18d8bc&number=50&addRecipeInstructions&addRecipeInformation=true&diet=vegetarian'`; // question mark at end of endpoint url (https://api.spoonacular.com/recipes/complexSearch) indicates that parameters are starting
+const endpoint = `https://api.spoonacular.com/recipes/complexSearch?apiKey=582a62bc2bef47c9a0e3aededb18d8bc&number=50&addRecipeInformation=true&diet=vegetarian'`; // question mark at end of endpoint url (https://api.spoonacular.com/recipes/complexSearch) indicates that parameters are starting
 
 async function findPreferences(){
     const fetchResponse = await fetch(endpoint); //sending request to API. Fetch returns a response object, not actual data yet

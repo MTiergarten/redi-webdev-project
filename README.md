@@ -2,38 +2,38 @@
 
 # Development Plan | _due 26/05_
 
-## ☕ Phase 3 | _due 26/05_ (implement API + more detailed output)
-- [x] ~~Integrate with external recipe API~~ ([Spoonacular](https://spoonacular.com/food-api/docs))
-- [x] ~~Display photo for each recipe~~
-- [x] ~~Add recipe details (workaround: link to recipe instead of fetching details)~~
-- [x] ~~Visual:~~
-  - [x] ~~custom checkboxes (tags with hover effect)~~
-  - [x] ~~implement visual design (monochromatic, monospace font)~~
-  - [x] ~~add emojis~~
- 
+## ✅ Phase 1 | _due 13/05_ (working output with limited flexibility)
+- User selects intolerances, allergies or preferences (e.g. don't recommend peanuts / gluten)
+  - [x] form to select intolerances
+- App fetches recipes from local database based on user preferences (while no API)
+  - [x] Create hardcoded recipe database for testing (while no API)
+  - [x] DOM manipulation - extract user preferences from the form
+  - [x] filter recipes by ingredients
+- App generates a 1-week meal plan (e.g. 2 options for each meal (breakfast, lunch, snack and dinner), reused across the week)
+  - [x] return plan with randomized recipes to yield enough meals for a week
+
 ## ✅ Phase 2 | _due 20/05_ (design)
 - Implement basic responsive design
-  - [x] ~~Sketch quick paper wireframes for desktop, tablet, mobile~~
+  - [x] Sketch quick paper wireframes for desktop, tablet, mobile
     - ref breakpoints: https://getbootstrap.com/docs/5.0/layout/breakpoints/)
     - sketch:
     - ![Wireframes sketch](./wireframeSketch.png)
-  - [x] ~~Design wireframes on Figma~~
+  - [x] Design wireframes on Figma
     - wireframes:
     - ![Wireframes Figma](./wireframeFigma.png)
     - [Click to Access Figma File](https://www.figma.com/design/UBPPA8SqRHvv5BVn6uhY4d/Meal-Planner?node-id=0-1&t=xfkfwliooCBffYU8-1)
-  - [x] ~~Define visual style for the project on Figma~~
-  - [x] ~~Implement design (mobile first)~~
-  - [x] ~~Implement responsive design (tablet + desktop)~~
+  - [x] Define visual style for the project on Figma
+  - [x] Implement design (mobile first)
+  - [x] Implement responsive design (tablet + desktop)
 
-## ✅ Phase 1 | _due 13/05_ (working output with limited flexibility)
-- User selects intolerances, allergies or preferences (e.g. don't recommend peanuts / gluten)
-  - [x] ~~To do: form to select intolerances~~
-- App fetches recipes from local database based on user preferences (while no API)
-  - [x] ~~To do: Create hardcoded recipe database for testing (while no API)~~
-  - [x] ~~To do: DOM manipulation - extract user preferences from the form~~
-  - [x] ~~To do: filter recipes by ingredients~~
-- App generates a 1-week meal plan (e.g. 2 options for each meal (breakfast, lunch, snack and dinner), reused across the week)
-  - [x] ~~To do: return plan with randomized recipes to yield enough meals for a week~~
+## ✅ Phase 3 | _due 26/05_ (implement API + more detailed output)
+- [x] Integrate with external recipe API ([Spoonacular](https://spoonacular.com/food-api/docs))
+- [x] Display photo for each recipe
+- [x] Add recipe details (workaround: link to recipe instead of fetching details)
+- [x] Visual:
+  - [x] custom checkboxes (tags with hover effect)
+  - [x] implement visual design (monochromatic, monospace font)
+  - [x] add emojis
 
 ## 💭 Wishlist of future improvements
 - Let user regenerate individual recipes in the meal plan
